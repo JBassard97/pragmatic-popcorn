@@ -8,6 +8,16 @@ function autoSave() {
   }
 }
 
+function autoSaveWithIdle() {
+  if (window.requestIdleCallback) {
+    requestIdleCallback(() => {
+      autoSave();
+    });
+  } else {
+    autoSave(); // Fallback for browsers without requestIdleCallback
+  }
+}
+
 function autoLoad() {
   if (!currentRomPath) return;
   const json = localStorage.getItem(`nes_save_${currentRomPath}`);

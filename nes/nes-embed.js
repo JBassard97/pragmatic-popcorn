@@ -106,18 +106,13 @@ async function nes_boot(rom_data) {
 
   if (autoSaveIntervalId !== null) {
     clearInterval(autoSaveIntervalId);
+    autoSaveIntervalId = null;
   }
-  // autoSaveIntervalId = setInterval(autoSave, 5000);
-  function autoSaveWithIdle() {
-    if (window.requestIdleCallback) {
-      requestIdleCallback(() => {
-        autoSave();
-      });
-    } else {
-      autoSave(); // Fallback for browsers without requestIdleCallback
-    }
+
+  const settings = JSON.parse(localStorage.getItem("settings") || "{}");
+  if (settings["auto-save-setting"]) {
+    autoSaveIntervalId = setInterval(autoSaveWithIdle, 5000);
   }
-  autoSaveIntervalId = setInterval(autoSaveWithIdle, 5000);
 
   if (audio_ctx && audio_ctx.state === "running") {
     for (let i = 0; i < 3; i++) {

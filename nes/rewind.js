@@ -141,10 +141,16 @@ function getRewindBufferStatus() {
  * Handles the frame counting and periodic state capture
  */
 function updateRewindSystem() {
-  // Capture rewind state periodically (not every frame to save memory)
+  const settings = JSON.parse(localStorage.getItem("settings") || "{}");
+
+  if (!settings["rewind-setting"]) {
+    return; // ⛔ Skip buffering if disabled
+  }
+
   if (frameCounter % REWIND_CAPTURE_RATE === 0) {
     captureRewindState();
   }
+
   frameCounter++;
 }
 
@@ -173,6 +179,10 @@ function initializeRewindControls(buttonId = "rewind", rewindKey = "r") {
 
   // Initialize keyboard controls
   document.addEventListener("keydown", (e) => {
+    const settings = JSON.parse(localStorage.getItem("settings") || "{}");
+
+    if (!settings["rewind-setting"]) return; // ⛔ Skip if rewind off
+
     if (e.key === rewindKey || e.key === rewindKey.toUpperCase()) {
       e.preventDefault();
       rewind5Seconds();

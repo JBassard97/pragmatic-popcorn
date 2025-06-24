@@ -62,6 +62,10 @@ window.addEventListener("DOMContentLoaded", () => {
         { "The Legend of Zelda": "../roms/nes/Zelda/LoZ1.nes" },
         { "Zelda II: The Adventure of Link": "../roms/nes/Zelda/LoZ2.nes" },
       ],
+      "Donkey Kong": [
+        { "Donkey Kong": "../roms/nes/DonkeyKong/DK.nes" },
+        { "Donkey Kong Jr.": "../roms/nes/DonkeyKong/DKJ.nes" },
+      ],
       MegaMan: [
         { "Mega Man 1": "../roms/nes/MegaMan/MM1.nes" },
         { "Mega Man 2": "../roms/nes/MegaMan/MM2.nes" },
@@ -71,6 +75,15 @@ window.addEventListener("DOMContentLoaded", () => {
         { "Mega Man 6": "../roms/nes/MegaMan/MM6.nes" },
       ],
       Kirby: [{ "Kirby's Adventure": "../roms/nes/Kirby/KA.nes" }],
+      Metroid: [{ Metroid: "../roms/nes/Metroid/M.nes" }],
+      Castlevania: [{ Castlevania: "../roms/nes/Castlevania/C1.nes" }],
+      Other: [
+        { Tetris: "../roms/nes/Other/T.nes" },
+        { "Duck Tales": "../roms/nes/Other/DT.nes" },
+        { "Adventures of Lolo": "../roms/nes/Other/LL.nes" },
+        { "Bubble Bobble": "../roms/nes/Other/BB.nes" },
+        { BurgerTime: "../roms/nes/Other/BT.nes" },
+      ],
     };
 
     const select = document.createElement("select");

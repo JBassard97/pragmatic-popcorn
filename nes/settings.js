@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const autoSaveCheckbox = document.getElementById("auto-save-setting");
   const rewindCheckbox = document.getElementById("rewind-setting");
+  const rewindBtn = document.getElementById("rewind");
   const prefersHDCheckbox = document.getElementById("prefers-hd-setting");
   const hdToggle = document.getElementById("hd-toggle");
   const hideControllerCheckbox = document.getElementById(
@@ -20,9 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   } else {
     // Ensure checkboxes reflect localStorage
+
     const settings = JSON.parse(localStorage.getItem("settings"));
     autoSaveCheckbox.checked = settings["auto-save-setting"];
     rewindCheckbox.checked = settings["rewind-setting"];
+    // ---------------------------
+    rewindCheckbox.checked = settings["rewind-setting"];
+    if (rewindCheckbox.checked) {
+      rewindBtn.style.display = "inline-block";
+    } else {
+      rewindBtn.style.display = "none";
+    }
     // ---------------------------
     prefersHDCheckbox.checked = settings["prefers-hd-setting"];
     if (prefersHDCheckbox.checked) {
@@ -48,6 +57,28 @@ document.addEventListener("DOMContentLoaded", () => {
       settings[event.target.id] = event.target.checked;
       localStorage.setItem("settings", JSON.stringify(settings));
 
+      if (event.target.id === "auto-save-setting") {
+        const enabled = event.target.checked;
+
+        if (enabled && !autoSaveIntervalId) {
+          autoSaveIntervalId = setInterval(autoSaveWithIdle, 5000);
+        } else if (!enabled && autoSaveIntervalId) {
+          clearInterval(autoSaveIntervalId);
+          autoSaveIntervalId = null;
+        }
+      }
+
+      // ----------------------------
+
+      if (event.target.id === "rewind-setting") {
+        if (event.target.checked) {
+          rewindBtn.style.display = "inline-block";
+        } else {
+          rewindBtn.style.display = "none";
+        }
+      }
+      // ----------------------------
+
       if (event.target.id === "prefers-hd-setting") {
         if (event.target.checked) {
           hdToggle.checked = true;
@@ -59,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
       // ----------------------------
+
       if (event.target.id === "hide-controller-setting") {
         if (event.target.checked) {
           document.getElementById("controller").style.display = "none";

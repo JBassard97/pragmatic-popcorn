@@ -9,7 +9,7 @@
     <script src="/nes/ui-controller.js"></script>
     <script src="/nes/rom-controls.js"></script>
     <script src="/nes/auto-save.js"></script>
-    <!-- <script src="/nes/rewind.js"></script> -->
+    <script src="/nes/rewind.js"></script>
     <script src="/nes/settings.js"></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -17,7 +17,10 @@
     <header>
       <h2>NES EMU</h2>
       <div id="select-container"></div>
-      <button onclick="document.getElementById('settings').showModal()">
+      <button
+        tabindex="-1"
+        onclick="document.getElementById('settings').showModal()"
+      >
         Settings
       </button>
     </header>
@@ -69,7 +72,9 @@
       <br />
       <div class="close-remap">
         <button onclick="this.closest('dialog').close()">Close</button
-        ><button onclick="window.alert('tried to remap keyboard')">Re-Map Keyboard</button>
+        ><button onclick="window.alert('tried to remap keyboard')">
+          Re-Map Keyboard
+        </button>
       </div>
     </dialog>
 
@@ -79,7 +84,7 @@
         <div class="buttons">
           <button id="power-continue">Power On</button>
           <button id="clear-save">Clear Save</button>
-          <!-- <button id="rewind">Rewind</button> -->
+          <button id="rewind">Rewind 5s</button>
           <label
             id="hd-toggle-label"
             style="
