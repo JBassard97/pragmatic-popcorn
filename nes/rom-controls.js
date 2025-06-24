@@ -55,8 +55,8 @@ window.addEventListener("DOMContentLoaded", () => {
   function renderSelect() {
     const romlist = {
       Mario: [
-        { "Super Mario Bros. 2": "/roms/nes/Mario/SMB2.nes" },
-        { "Super Mario Bros. 3": "../roms/nes/Mario/SMB3.nes" },
+        { "Super Mario Bros. 2": "roms/nes/Mario/SMB2.nes" },
+        { "Super Mario Bros. 3": "roms/nes/Mario/SMB3.nes" },
       ],
       Zelda: [
         { "The Legend of Zelda": "../roms/nes/Zelda/LoZ1.nes" },
