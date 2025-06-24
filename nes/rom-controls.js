@@ -53,8 +53,8 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderSelect() {
-    // const BASE_URL = "https://jbassard97.github.io/pragmatic-popcorn";
-    const BASE_URL = "localhost:3000"; // For local testing, change to your local server URL
+    const BASE_URL = "https://jbassard97.github.io/pragmatic-popcorn";
+    // const BASE_URL = "localhost:3000"; // For local testing, change to your local server URL
     const romlist = {
       Mario: [
         { "Super Mario Bros. 2": `${BASE_URL}/roms/nes/Mario/SMB2.nes` },
