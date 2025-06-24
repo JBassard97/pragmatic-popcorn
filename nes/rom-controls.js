@@ -53,36 +53,39 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderSelect() {
+    const BASE_URL = "https://jbassard97.github.io/pragmatic-popcorn";
     const romlist = {
       Mario: [
-        { "Super Mario Bros. 2": "roms/nes/Mario/SMB2.nes" },
-        { "Super Mario Bros. 3": "roms/nes/Mario/SMB3.nes" },
+        { "Super Mario Bros. 2": `${BASE_URL}/roms/nes/Mario/SMB2.nes` },
+        { "Super Mario Bros. 3": `${BASE_URL}/roms/nes/Mario/SMB3.nes` },
       ],
       Zelda: [
-        { "The Legend of Zelda": "roms/nes/Zelda/LoZ1.nes" },
-        { "Zelda II: The Adventure of Link": "roms/nes/Zelda/LoZ2.nes" },
+        { "The Legend of Zelda": `${BASE_URL}/roms/nes/Zelda/LoZ1.nes` },
+        {
+          "Zelda II: The Adventure of Link": `${BASE_URL}/roms/nes/Zelda/LoZ2.nes`,
+        },
       ],
       "Donkey Kong": [
-        { "Donkey Kong": "roms/nes/DonkeyKong/DK.nes" },
-        { "Donkey Kong Jr.": "roms/nes/DonkeyKong/DKJ.nes" },
+        { "Donkey Kong": `${BASE_URL}/roms/nes/DonkeyKong/DK.nes` },
+        { "Donkey Kong Jr.": `${BASE_URL}/roms/nes/DonkeyKong/DKJ.nes` },
       ],
       MegaMan: [
-        { "Mega Man 1": "roms/nes/MegaMan/MM1.nes" },
-        { "Mega Man 2": "roms/nes/MegaMan/MM2.nes" },
-        { "Mega Man 3": "roms/nes/MegaMan/MM3.nes" },
-        { "Mega Man 4": "roms/nes/MegaMan/MM4.nes" },
-        { "Mega Man 5": "roms/nes/MegaMan/MM5.nes" },
-        { "Mega Man 6": "roms/nes/MegaMan/MM6.nes" },
+        { "Mega Man 1": `${BASE_URL}/roms/nes/MegaMan/MM1.nes` },
+        { "Mega Man 2": `${BASE_URL}/roms/nes/MegaMan/MM2.nes` },
+        { "Mega Man 3": `${BASE_URL}/roms/nes/MegaMan/MM3.nes` },
+        { "Mega Man 4": `${BASE_URL}/roms/nes/MegaMan/MM4.nes` },
+        { "Mega Man 5": `${BASE_URL}/roms/nes/MegaMan/MM5.nes` },
+        { "Mega Man 6": `${BASE_URL}/roms/nes/MegaMan/MM6.nes` },
       ],
-      Kirby: [{ "Kirby's Adventure": "roms/nes/Kirby/KA.nes" }],
-      Metroid: [{ Metroid: "roms/nes/Metroid/M.nes" }],
-      Castlevania: [{ Castlevania: "roms/nes/Castlevania/C1.nes" }],
+      Kirby: [{ "Kirby's Adventure": `${BASE_URL}/roms/nes/Kirby/KA.nes` }],
+      Metroid: [{ Metroid: `${BASE_URL}/roms/nes/Metroid/M.nes` }],
+      Castlevania: [{ Castlevania: `${BASE_URL}/roms/nes/Castlevania/C1.nes` }],
       Other: [
-        { Tetris: "roms/nes/Other/T.nes" },
-        { "Duck Tales": "roms/nes/Other/DT.nes" },
-        { "Adventures of Lolo": "roms/nes/Other/LL.nes" },
-        { "Bubble Bobble": "roms/nes/Other/BB.nes" },
-        { BurgerTime: "roms/nes/Other/BT.nes" },
+        { Tetris: `${BASE_URL}/roms/nes/Other/T.nes` },
+        { "Duck Tales": `${BASE_URL}/roms/nes/Other/DT.nes` },
+        { "Adventures of Lolo": `${BASE_URL}/roms/nes/Other/LL.nes` },
+        { "Bubble Bobble": `${BASE_URL}/roms/nes/Other/BB.nes` },
+        { BurgerTime: `${BASE_URL}/roms/nes/Other/BT.nes` },
       ],
     };
 
