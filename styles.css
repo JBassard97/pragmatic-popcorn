@@ -1,0 +1,236 @@
+/* === General Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Body Styling === */
+body {
+  background-color: rgb(42, 47, 47);
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+
+  /* padding: 1rem; */
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.25rem 1rem;
+}
+
+dialog {
+  width: 90%;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  /* position: fixed; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.all-settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-settings label {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.all-settings p {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.532);
+  display: flex;
+  flex-direction: column;
+}
+
+.all-settings p span {
+  font-style: italic;
+}
+
+.close-remap {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Canvas Styling === */
+#nes-canvas {
+  aspect-ratio: 256 / 240;
+  width: 90%;
+  max-width: 475px;
+  height: auto;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === ROM Control Panel === */
+.rom-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* === Button Group === */
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+
+/* === Buttons === */
+button {
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(159, 159, 159);
+  border: 2px solid rgb(159, 159, 159);
+  font-size: 16px;
+  height: 25px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === Clear Save Button Specific === */
+#clear-save {
+  display: none;
+  border-color: blue;
+  color: blue;
+}
+
+/* === Select Dropdown Styling === */
+select {
+  border-radius: 10px;
+  border: qpx solid rgb(159, 159, 159);
+  color: rgb(159, 159, 159);
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* === Option Group / Option Styling === */
+optgroup,
+option {
+  color: rgb(159, 159, 159);
+  background-color: black;
+  font-style: italic;
+}
+
+/* === Responsive Font Scaling (Optional) === */
+/* html {
+  font-size: clamp(14px, 2vw, 18px);
+} */
+
+#hd-toggle-label {
+  font-size: 16px;
+  height: 24px;
+  padding-top: 2px;
+  font-style: italic;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+#controller {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 16px;
+}
+
+.dpad {
+  display: grid;
+  grid-template-columns: 40px 40px 40px;
+  grid-template-rows: 40px 40px 40px;
+  gap: 0px;
+}
+
+.meta-buttons,
+.ab-buttons {
+  display: flex;
+}
+
+.meta-buttons {
+  gap: 5px;
+  padding-right: 35px;
+}
+
+.ab-buttons .controller-button {
+  border-radius: 50%;
+  background-color: red;
+}
+
+.ab-buttons .controller-button[data-btn="A"] {
+  transform: translateY(-10px);
+}
+
+.ab-buttons .controller-button[data-btn="B"] {
+  transform: translateY(10px);
+}
+
+.controller-button {
+  width: 40px;
+  height: 40px;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meta-buttons {
+  align-self: flex-start;
+  justify-self: center;
+}
+
+.meta-buttons .controller-button {
+  height: 20px;
+  width: 50px;
+}

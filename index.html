@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>NES Emulator</title>
+    <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
+    <script src="/nes/nes-embed.js"></script>
+    <script src="/nes/keyboard-controls.js"></script>
+    <script src="/nes/ui-controller.js"></script>
+    <script src="/nes/rom-controls.js"></script>
+    <script src="/nes/auto-save.js"></script>
+    <!-- <script src="/nes/rewind.js"></script> -->
+    <script src="/nes/settings.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h2>NES EMU</h2>
+      <div id="select-container"></div>
+      <button onclick="document.getElementById('settings').showModal()">
+        Settings
+      </button>
+    </header>
+
+    <dialog id="settings">
+      <h2 style="text-decoration: underline">Settings</h2>
+      <br />
+      <div class="all-settings">
+        <label for="auto-save-setting"
+          >Auto Save <input type="checkbox" id="auto-save-setting" />
+        </label>
+        <p>
+          Enables/Disables saving game state every 5 seconds.
+          <span
+            >(May decrease performance at the cost of getting far in your
+            games)</span
+          >
+        </p>
+        <label for="rewind-setting"
+          >Rewind <input type="checkbox" id="rewind-setting"
+        /></label>
+        <p>
+          Enables/Disables the ability to rewind games 5 seconds at a time - to
+          a certain point.
+          <span
+            >(This will negatively affect performance at the cost of getting
+            perfect outcomes in your games.)</span
+          >
+        </p>
+        <label for="prefers-hd-setting"
+          >Prefer HD <input type="checkbox" id="prefers-hd-setting"
+        /></label>
+        <p>
+          Automatically selects HD setting every time.
+          <span>(HD has negligible effect on performance.)</span>
+        </p>
+        <label for="hide-controller-setting"
+          >Hide Controller UI
+          <input type="checkbox" id="hide-controller-setting"
+        /></label>
+        <p>
+          Hides the D-Pad, Start/Select, and A/B buttons.
+          <span
+            >(No effect on performance, this setting is meant for PC
+            users)</span
+          >
+        </p>
+      </div>
+      <br />
+      <div class="close-remap">
+        <button onclick="this.closest('dialog').close()">Close</button
+        ><button onclick="window.alert('tried to remap keyboard')">Re-Map Keyboard</button>
+      </div>
+    </dialog>
+
+    <div class="nes-container">
+      <canvas id="nes-canvas" width="256" height="240"></canvas>
+      <div class="rom-controls">
+        <div class="buttons">
+          <button id="power-continue">Power On</button>
+          <button id="clear-save">Clear Save</button>
+          <!-- <button id="rewind">Rewind</button> -->
+          <label
+            id="hd-toggle-label"
+            style="
+              display: flex;
+              font-style: italic;
+              align-items: center;
+              gap: 0.3rem;
+            "
+            >HD
+            <input type="checkbox" tabindex="-1" id="hd-toggle" />
+          </label>
+        </div>
+      </div>
+      <div id="controller">
+        <div class="dpad">
+          <div></div>
+          <button class="controller-button" data-btn="UP">⬆️</button>
+          <div></div>
+
+          <button class="controller-button" data-btn="LEFT">⬅️</button>
+          <div></div>
+          <button class="controller-button" data-btn="RIGHT">➡️</button>
+
+          <div></div>
+          <button class="controller-button" data-btn="DOWN">⬇️</button>
+          <div></div>
+        </div>
+
+        <div class="meta-buttons">
+          <button class="controller-button" data-btn="SELECT">Select</button>
+          <button class="controller-button" data-btn="START">Start</button>
+        </div>
+
+        <div class="ab-buttons">
+          <button class="controller-button" data-btn="B">B</button>
+          <button class="controller-button" data-btn="A">A</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
