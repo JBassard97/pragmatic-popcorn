@@ -20,6 +20,7 @@ body {
   overflow-y: hidden;
 }
 
+
 header {
   display: flex;
   justify-content: space-between;
@@ -234,3 +235,61 @@ input[type="checkbox"]:focus {
   height: 20px;
   width: 50px;
 }
+
+/* === Prevent Text Selection on Buttons === */
+button,
+.controller-button,
+label,
+select,
+option {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* === Responsive Layout for Galaxy S20 Ultra & Mobile === */
+@media (max-width: 768px) {
+  #nes-canvas {
+    width: 90vw;
+    max-width: none;
+  }
+
+  .controller-button {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .meta-buttons .controller-button {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .dpad {
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px;
+    gap: 4px;
+  }
+
+  .meta-buttons {
+    gap: 10px;
+    padding-right: 0;
+  }
+
+  .ab-buttons {
+    gap: 20px;
+  }
+
+  .ab-buttons .controller-button {
+    font-size: 18px;
+  }
+
+  #controller {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
