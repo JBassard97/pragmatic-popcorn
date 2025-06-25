@@ -189,6 +189,7 @@ input[type="checkbox"]:focus {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
+  width: 100%;
 }
 
 .dpad {
