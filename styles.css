@@ -178,33 +178,43 @@ input[type="checkbox"]:focus {
 }
 
 #controller {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   width: 100%;
-  gap: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.controller-row-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .dpad {
   display: grid;
   grid-template-columns: 40px 40px 40px;
   grid-template-rows: 40px 40px 40px;
-  gap: 0px;
 }
 
-.meta-buttons,
+.meta-buttons {
+  display: flex;
+}
+
 .ab-buttons {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .meta-buttons {
   gap: 5px;
-  padding-right: 35px;
 }
 
 .ab-buttons .controller-button {
   border-radius: 50%;
   background-color: red;
+  width: 50px;
+  height: 50px;
 }
 
 .ab-buttons .controller-button[data-btn="A"] {
@@ -212,7 +222,7 @@ input[type="checkbox"]:focus {
 }
 
 .ab-buttons .controller-button[data-btn="B"] {
-  transform: translateY(10px);
+  transform: translateY(20px);
 }
 
 .controller-button {
@@ -226,8 +236,10 @@ input[type="checkbox"]:focus {
 }
 
 .meta-buttons {
-  align-self: flex-start;
-  justify-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .meta-buttons .controller-button {
@@ -237,13 +249,7 @@ input[type="checkbox"]:focus {
 
 @media (hover: none) and (pointer: coarse) {
   header {
-    padding: 2.25rem 5rem;
-  }
-
-  header h2,
-  header #select-container,
-  header button {
-    scale: 2;
+    padding: 0.25rem 0.5rem;
   }
 
   #nes-canvas {
@@ -252,30 +258,31 @@ input[type="checkbox"]:focus {
   }
 
   .rom-controls {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 0.25rem;
+    /* padding-bottom: 2rem; */
   }
 
-  .rom-controls .buttons {
-    scale: 2;
-  }
+  /* .rom-controls .buttons {
+  } */
 
   #controller {
-    margin-top: 3rem;
+    min-height: 40vh;
+    justify-content: center;
   }
 
+  /* .controller-row-2 {
+  } */
+
   .meta-buttons {
-    scale: 3;
+    scale: 1.5;
+    margin-bottom: 3rem;
   }
 
   .dpad {
-    padding-top: 10rem;
-    scale: 3.5;
-    padding-left: 1rem;
+    scale: 1.4;
   }
 
   .ab-buttons {
-    padding-top: 8rem;
-    scale: 4;
+    scale: 1.5;
   }
 }
