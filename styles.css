@@ -182,6 +182,7 @@ input[type="checkbox"]:focus {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .controller-row-2 {
@@ -286,3 +287,4 @@ input[type="checkbox"]:focus {
     scale: 1.5;
   }
 }
+
