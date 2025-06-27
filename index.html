@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
     <script src="./nes/nes-embed.js"></script>
     <script src="./nes/keyboard-controls.js"></script>
+    <script src="./nes/remap-keyboard.js"></script>
     <script src="./nes/ui-controller.js"></script>
     <script src="./nes/rom-controls.js"></script>
     <script src="./nes/auto-save.js"></script>
@@ -86,9 +87,41 @@
           tabindex="-1"
           onkeydown="return false"
           onselectstart="return false"
-          onclick="window.alert('tried to remap keyboard'); this.blur();"
+          onclick="this.closest('dialog').close(); document.getElementById('remap-keyboard').showModal(); this.blur();"
         >
           Re-Map Keyboard
+        </button>
+      </div>
+    </dialog>
+    <dialog id="remap-keyboard">
+      <h2>Remap Keyboard</h2>
+      <br />
+      <label for="BUTTON_UP">UP: <input type="text" id="BUTTON_UP" /></label>
+      <label for="BUTTON_DOWN"
+        >DOWN: <input type="text" id="BUTTON_DOWN"
+      /></label>
+      <label for="BUTTON_LEFT"
+        >LEFT: <input type="text" id="BUTTON_LEFT"
+      /></label>
+      <label for="BUTTON_RIGHT"
+        >RIGHT: <input type="text" id="BUTTON_RIGHT"
+      /></label>
+      <label for="BUTTON_A">A: <input type="text" id="BUTTON_A" /></label>
+      <label for="BUTTON_B">B: <input type="text" id="BUTTON_B" /></label>
+      <label for="BUTTON_START"
+        >START: <input type="text" id="BUTTON_START"
+      /></label>
+      <label for="BUTTON_SELECT">
+        SELECT: <input type="text" id="BUTTON_SELECT"
+      /></label>
+      <br />
+      <div class="back-close">
+        <button
+          onclick="this.closest('dialog').close(); document.getElementById('settings').showModal(); this.blur()"
+        >
+          Back</button
+        ><button onclick="this.closest('dialog').close(); this.blur();">
+          Close
         </button>
       </div>
     </dialog>

@@ -73,12 +73,26 @@ dialog::backdrop {
   font-style: italic;
 }
 
-.close-remap {
+.close-remap, .back-close {
   width: 100%;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
+}
+
+#remap-keyboard h2 {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#remap-keyboard label {
+  margin-bottom: 10px;
+}
+
+#remap-keyboard label input {
+  width: 80px;
+  text-align: center;
 }
 
 .nes-container {
@@ -268,7 +282,7 @@ input[type="checkbox"]:focus {
   } */
 
   #controller {
-    min-height: 40vh;
+    min-height: 32vh;
     justify-content: center;
   }
 
