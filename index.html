@@ -22,8 +22,7 @@
         tabindex="-1"
         onkeydown="return false"
         onselectstart="return false"
-        ontouchstart="event.preventDefault()"
-        onclick="document.getElementById('settings').showModal()"
+        onclick="document.getElementById('settings').showModal(); this.blur();"
       >
         Settings
       </button>
@@ -79,8 +78,7 @@
           tabindex="-1"
           onkeydown="return false"
           onselectstart="return false"
-          ontouchstart="event.preventDefault()"
-          onclick="this.closest('dialog').close()"
+          onclick="this.closest('dialog').close(); this.blur();"
         >
           Close
         </button>
@@ -88,8 +86,7 @@
           tabindex="-1"
           onkeydown="return false"
           onselectstart="return false"
-          ontouchstart="event.preventDefault()"
-          onclick="window.alert('tried to remap keyboard')"
+          onclick="window.alert('tried to remap keyboard'); this.blur();"
         >
           Re-Map Keyboard
         </button>
@@ -105,7 +102,7 @@
             tabindex="-1"
             onkeydown="return false"
             onselectstart="return false"
-            ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             Power On
           </button>
@@ -114,7 +111,7 @@
             tabindex="-1"
             onkeydown="return false"
             onselectstart="return false"
-            ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             Clear Save
           </button>
@@ -123,7 +120,7 @@
             tabindex="-1"
             onkeydown="return false"
             onselectstart="return false"
-            ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             Rewind 5s
           </button>
@@ -150,6 +147,7 @@
           onkeydown="return false"
           onselectstart="return false"
           ontouchstart="event.preventDefault()"
+          onclick="this.blur();"
         >
           Select
         </button>
@@ -160,6 +158,7 @@
           onkeydown="return false"
           onselectstart="return false"
           ontouchstart="event.preventDefault()"
+          onclick="this.blur();"
         >
           Start
         </button>
@@ -174,6 +173,7 @@
             onkeydown="return false"
             onselectstart="return false"
             ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             ⬆️
           </button>
@@ -186,6 +186,7 @@
             onkeydown="return false"
             onselectstart="return false"
             ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             ⬅️
           </button>
@@ -197,6 +198,7 @@
             onkeydown="return false"
             onselectstart="return false"
             ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             ➡️
           </button>
@@ -209,6 +211,7 @@
             onkeydown="return false"
             onselectstart="return false"
             ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             ⬇️
           </button>
@@ -222,6 +225,7 @@
             onkeydown="return false"
             onselectstart="return false"
             ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             B
           </button>
@@ -232,6 +236,7 @@
             onkeydown="return false"
             onselectstart="return false"
             ontouchstart="event.preventDefault()"
+            onclick="this.blur();"
           >
             A
           </button>

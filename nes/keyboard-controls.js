@@ -1,56 +1,42 @@
 function keyboard(callback, event) {
-  var player = 1;
+  const player = 1;
 
-  if (
-    [
-      "Shift",
-      "Tab",
-      "ArrowUp",
-      "ArrowDown",
-      "ArrowLeft",
-      "ArrowRight",
-    ].includes(event.key)
-  ) {
+  // Prevent scrolling/tabbing for certain keys
+  const keysToPrevent = [
+    "Shift",
+    "Tab",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+  ];
+  if (keysToPrevent.includes(event.key)) {
     event.preventDefault();
   }
 
-  switch (event.keyCode) {
-    case 38:
-      callback(player, jsnes.Controller.BUTTON_UP);
-      break;
-    case 40:
-      callback(player, jsnes.Controller.BUTTON_DOWN);
-      break;
-    case 37:
-      callback(player, jsnes.Controller.BUTTON_LEFT);
-      break;
-    case 39:
-      callback(player, jsnes.Controller.BUTTON_RIGHT);
-      break;
-    case 65:
-    case 81:
-      callback(player, jsnes.Controller.BUTTON_A);
-      break;
-    case 83:
-    case 79:
-      callback(player, jsnes.Controller.BUTTON_B);
-      break;
-    case 9:
-      callback(player, jsnes.Controller.BUTTON_SELECT);
-      break;
-    case 13:
-      callback(player, jsnes.Controller.BUTTON_START);
-      break;
+  const keybindings = {
+    ArrowUp: jsnes.Controller.BUTTON_UP,
+    ArrowDown: jsnes.Controller.BUTTON_DOWN,
+    ArrowLeft: jsnes.Controller.BUTTON_LEFT,
+    ArrowRight: jsnes.Controller.BUTTON_RIGHT,
+    a: jsnes.Controller.BUTTON_A,
+    q: jsnes.Controller.BUTTON_A,
+    s: jsnes.Controller.BUTTON_B,
+    o: jsnes.Controller.BUTTON_B,
+    Tab: jsnes.Controller.BUTTON_SELECT,
+    Enter: jsnes.Controller.BUTTON_START,
+  };
+
+  const button = keybindings[event.key];
+  if (button !== undefined) {
+    callback(player, button);
   }
 }
 
 document.addEventListener("keydown", (event) => {
   keyboard(nes.buttonDown, event);
 });
+
 document.addEventListener("keyup", (event) => {
   keyboard(nes.buttonUp, event);
 });
-
-// -------------------------
-
-
