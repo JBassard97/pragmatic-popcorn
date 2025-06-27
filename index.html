@@ -20,6 +20,9 @@
       <div id="select-container"></div>
       <button
         tabindex="-1"
+        onkeydown="return false"
+        onselectstart="return false"
+        ontouchstart="event.preventDefault()"
         onclick="document.getElementById('settings').showModal()"
       >
         Settings
@@ -72,8 +75,22 @@
       </div>
       <br />
       <div class="close-remap">
-        <button onclick="this.closest('dialog').close()">Close</button
-        ><button onclick="window.alert('tried to remap keyboard')">
+        <button
+          tabindex="-1"
+          onkeydown="return false"
+          onselectstart="return false"
+          ontouchstart="event.preventDefault()"
+          onclick="this.closest('dialog').close()"
+        >
+          Close
+        </button>
+        <button
+          tabindex="-1"
+          onkeydown="return false"
+          onselectstart="return false"
+          ontouchstart="event.preventDefault()"
+          onclick="window.alert('tried to remap keyboard')"
+        >
           Re-Map Keyboard
         </button>
       </div>
@@ -83,9 +100,33 @@
       <canvas id="nes-canvas" width="256" height="240"></canvas>
       <div class="rom-controls">
         <div class="buttons">
-          <button id="power-continue">Power On</button>
-          <button id="clear-save">Clear Save</button>
-          <button id="rewind">Rewind 5s</button>
+          <button
+            id="power-continue"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            Power On
+          </button>
+          <button
+            id="clear-save"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            Clear Save
+          </button>
+          <button
+            id="rewind"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            Rewind 5s
+          </button>
           <label
             id="hd-toggle-label"
             style="
@@ -102,26 +143,98 @@
     </div>
     <div id="controller">
       <div class="meta-buttons">
-        <button class="controller-button" data-btn="SELECT">Select</button>
-        <button class="controller-button" data-btn="START">Start</button>
+        <button
+          class="controller-button"
+          data-btn="SELECT"
+          tabindex="-1"
+          onkeydown="return false"
+          onselectstart="return false"
+          ontouchstart="event.preventDefault()"
+        >
+          Select
+        </button>
+        <button
+          class="controller-button"
+          data-btn="START"
+          tabindex="-1"
+          onkeydown="return false"
+          onselectstart="return false"
+          ontouchstart="event.preventDefault()"
+        >
+          Start
+        </button>
       </div>
       <div class="controller-row-2">
         <div class="dpad">
           <div></div>
-          <button class="controller-button" data-btn="UP">⬆️</button>
+          <button
+            class="controller-button"
+            data-btn="UP"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            ⬆️
+          </button>
           <div></div>
 
-          <button class="controller-button" data-btn="LEFT">⬅️</button>
+          <button
+            class="controller-button"
+            data-btn="LEFT"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            ⬅️
+          </button>
           <div></div>
-          <button class="controller-button" data-btn="RIGHT">➡️</button>
+          <button
+            class="controller-button"
+            data-btn="RIGHT"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            ➡️
+          </button>
 
           <div></div>
-          <button class="controller-button" data-btn="DOWN">⬇️</button>
+          <button
+            class="controller-button"
+            data-btn="DOWN"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            ⬇️
+          </button>
           <div></div>
         </div>
         <div class="ab-buttons">
-          <button class="controller-button" data-btn="B">B</button>
-          <button class="controller-button" data-btn="A">A</button>
+          <button
+            class="controller-button"
+            data-btn="B"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            B
+          </button>
+          <button
+            class="controller-button"
+            data-btn="A"
+            tabindex="-1"
+            onkeydown="return false"
+            onselectstart="return false"
+            ontouchstart="event.preventDefault()"
+          >
+            A
+          </button>
         </div>
       </div>
     </div>
