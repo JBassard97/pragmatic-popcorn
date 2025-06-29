@@ -1,4 +1,15 @@
 // Initialize global keybindings (shared and real-time)
+const defaultKeybindings = {
+  ArrowUp: jsnes.Controller.BUTTON_UP,
+  ArrowDown: jsnes.Controller.BUTTON_DOWN,
+  ArrowLeft: jsnes.Controller.BUTTON_LEFT,
+  ArrowRight: jsnes.Controller.BUTTON_RIGHT,
+  a: jsnes.Controller.BUTTON_A,
+  s: jsnes.Controller.BUTTON_B,
+  Tab: jsnes.Controller.BUTTON_SELECT,
+  Enter: jsnes.Controller.BUTTON_START,
+};
+
 if (!window.keybindings) {
   const saved = JSON.parse(localStorage.getItem("keybindings"));
   window.keybindings = saved || { ...defaultKeybindings };
