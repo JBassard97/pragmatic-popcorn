@@ -11,50 +11,53 @@ document.addEventListener("DOMContentLoaded", () => {
     "hide-keybindings-setting"
   );
 
-  // Init settings object in localStorage if it doesn't exist
-  if (!localStorage.getItem("settings")) {
-    localStorage.setItem(
-      "settings",
-      JSON.stringify({
-        "auto-save-setting": true,
-        "rewind-setting": false,
-        "prefers-hd-setting": false,
-        "hide-controller-setting": false,
-        "hide-keybinding-setting": false,
-      })
-    );
-  } else {
-    // Ensure checkboxes reflect localStorage
+  const defaultSettings = {
+    "auto-save-setting": true,
+    "rewind-setting": false,
+    "prefers-hd-setting": false,
+    "hide-controller-setting": false,
+    "hide-keybindings-setting": false,
+  };
 
-    const settings = JSON.parse(localStorage.getItem("settings"));
-    autoSaveCheckbox.checked = settings["auto-save-setting"];
-    rewindCheckbox.checked = settings["rewind-setting"];
-    // ---------------------------
-    rewindCheckbox.checked = settings["rewind-setting"];
-    if (rewindCheckbox.checked) {
-      rewindBtn.style.display = "inline-block";
-    } else {
-      rewindBtn.style.display = "none";
-    }
-    // ---------------------------
-    prefersHDCheckbox.checked = settings["prefers-hd-setting"];
-    if (prefersHDCheckbox.checked) {
-      hdToggle.checked = true;
-      document.getElementById("nes-canvas").style.imageRendering = "pixelated";
-    }
-    // ---------------------------
-    hideControllerCheckbox.checked = settings["hide-controller-setting"];
-    if (hideControllerCheckbox.checked) {
-      document.getElementById("controller").style.display = "none";
-    }
-    // ----------------------------
-    hideKeybindingsCheckbox.checked = settings["hide-keybindings-setting"];
-    if (hideKeybindingsCheckbox.checked) {
-      document.getElementById("bindings-list").style.display = "none";
-    }
+  let settings = JSON.parse(localStorage.getItem("settings"));
+
+  // Replace with defaults if missing any keys
+  const needsReset =
+    !settings || Object.keys(defaultSettings).some((key) => !(key in settings));
+
+  if (needsReset) {
+    settings = { ...defaultSettings };
+    localStorage.setItem("settings", JSON.stringify(settings));
   }
 
-  // Toggle settings in localStorage
+  // Reflect stored settings in checkboxes and UI
+  autoSaveCheckbox.checked = settings["auto-save-setting"];
+  rewindCheckbox.checked = settings["rewind-setting"];
+  prefersHDCheckbox.checked = settings["prefers-hd-setting"];
+  hideControllerCheckbox.checked = settings["hide-controller-setting"];
+  hideKeybindingsCheckbox.checked = settings["hide-keybindings-setting"];
+
+  // Apply setting effects
+  if (rewindCheckbox.checked) {
+    rewindBtn.style.display = "inline-block";
+  } else {
+    rewindBtn.style.display = "none";
+  }
+
+  if (prefersHDCheckbox.checked) {
+    hdToggle.checked = true;
+    document.getElementById("nes-canvas").style.imageRendering = "pixelated";
+  }
+
+  if (hideControllerCheckbox.checked) {
+    document.getElementById("controller").style.display = "none";
+  }
+
+  if (hideKeybindingsCheckbox.checked) {
+    document.getElementById("bindings-list").style.display = "none";
+  }
+
+  // Save setting changes live
   for (const checkbox of [
     autoSaveCheckbox,
     rewindCheckbox,
@@ -63,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     hideKeybindingsCheckbox,
   ]) {
     checkbox.addEventListener("change", (event) => {
-      const settings = JSON.parse(localStorage.getItem("settings"));
       settings[event.target.id] = event.target.checked;
       localStorage.setItem("settings", JSON.stringify(settings));
 
@@ -78,45 +80,32 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // ----------------------------
-
       if (event.target.id === "rewind-setting") {
-        if (event.target.checked) {
-          rewindBtn.style.display = "inline-block";
-        } else {
-          rewindBtn.style.display = "none";
-        }
+        rewindBtn.style.display = event.target.checked
+          ? "inline-block"
+          : "none";
       }
-      // ----------------------------
 
       if (event.target.id === "prefers-hd-setting") {
-        if (event.target.checked) {
-          hdToggle.checked = true;
-          document.getElementById("nes-canvas").style.imageRendering =
-            "pixelated";
-        } else {
-          hdToggle.checked = false;
-          document.getElementById("nes-canvas").style.imageRendering = "auto";
-        }
+        hdToggle.checked = event.target.checked;
+        document.getElementById("nes-canvas").style.imageRendering = event
+          .target.checked
+          ? "pixelated"
+          : "auto";
       }
-      // ----------------------------
 
       if (event.target.id === "hide-controller-setting") {
-        if (event.target.checked) {
-          document.getElementById("controller").style.display = "none";
-        } else {
-          document.getElementById("controller").style.display = "flex";
-        }
+        document.getElementById("controller").style.display = event.target
+          .checked
+          ? "none"
+          : "flex";
       }
 
-      // -----------------------------
-
       if (event.target.id === "hide-keybindings-setting") {
-        if (event.target.checked) {
-          document.getElementById("bindings-list").style.display = "none";
-        } else {
-          document.getElementById("bindings-list").style.display = "flex";
-        }
+        document.getElementById("bindings-list").style.display = event.target
+          .checked
+          ? "none"
+          : "flex";
       }
     });
   }
