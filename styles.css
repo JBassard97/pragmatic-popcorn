@@ -55,6 +55,15 @@ dialog::backdrop {
 .all-settings {
   display: flex;
   flex-direction: column;
+  max-height: 300px;
+  overflow-y: scroll;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.all-settings::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .all-settings label {
@@ -63,7 +72,7 @@ dialog::backdrop {
 }
 
 .all-settings p {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: rgba(255, 255, 255, 0.532);
   display: flex;
   flex-direction: column;
@@ -73,7 +82,8 @@ dialog::backdrop {
   font-style: italic;
 }
 
-.close-remap, .back-close {
+.close-remap,
+.back-close {
   width: 100%;
   display: flex;
   gap: 10px;
@@ -261,6 +271,18 @@ input[type="checkbox"]:focus {
 .meta-buttons .controller-button {
   height: 20px;
   width: 50px;
+}
+
+.keybinding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(159, 159, 159);
+  border: 2px solid rgb(159, 159, 159);
 }
 
 @media (hover: none) and (pointer: coarse) and (max-width: 550px) {

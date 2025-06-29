@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       input.value = "";
       input.placeholder = newKey;
+
+      renderKeybindingsDisplay();
     });
   });
+
+  renderKeybindingsDisplay();
 });

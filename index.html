@@ -8,6 +8,7 @@
     <script src="./nes/nes-embed.js"></script>
     <script src="./nes/keyboard-controls.js"></script>
     <script src="./nes/remap-keyboard.js"></script>
+    <script src="./nes//keybinding-display.js"></script>
     <script src="./nes/ui-controller.js"></script>
     <script src="./nes/rom-controls.js"></script>
     <script src="./nes/auto-save.js"></script>
@@ -59,7 +60,7 @@
         /></label>
         <p>
           Automatically selects HD setting every time.
-          <span>(HD has negligible effect on performance.)</span>
+          <span>(No effect on performance, purely aesthetic.)</span>
         </p>
         <label for="hide-controller-setting"
           >Hide Controller UI
@@ -67,10 +68,15 @@
         /></label>
         <p>
           Hides the D-Pad, Start/Select, and A/B buttons.
-          <span
-            >(No effect on performance, this setting is meant for PC
-            users)</span
-          >
+          <span>(No effect on performance, purely aesthetic.)</span>
+        </p>
+        <label for="hide-controller-setting"
+          >Hide Keybinding Guide
+          <input type="checkbox" id="hide-keybindings-setting"
+        /></label>
+        <p>
+          Hides Keybindings Display Guide.
+          <span>(No effect on performance, purely aesthetic.)</span>
         </p>
       </div>
       <br />
@@ -171,6 +177,25 @@
         </div>
       </div>
     </div>
+    <div
+      id="bindings-display"
+      style="margin-top: 0.5rem; margin-bottom: 0.5rem"
+    >
+      <div
+        id="bindings-list"
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          align-items: center;
+          text-align: center;
+          gap: 5px;
+          padding: 0 20px;
+        "
+      ></div>
+    </div>
+
     <div id="controller">
       <div class="meta-buttons">
         <button

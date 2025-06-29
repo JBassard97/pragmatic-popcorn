@@ -87,6 +87,8 @@ window.addEventListener("DOMContentLoaded", () => {
         { "Adventures of Lolo": `${BASE_URL}/roms/nes/Other/LL.nes` },
         { "Bubble Bobble": `${BASE_URL}/roms/nes/Other/BB.nes` },
         { BurgerTime: `${BASE_URL}/roms/nes/Other/BT.nes` },
+        { "Kid Icarus": `${BASE_URL}/roms/nes/Other/KI.nes` },
+        { Lemmings: `${BASE_URL}/roms/nes/Other/L.nes` },
       ],
     };
 

@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const hideControllerCheckbox = document.getElementById(
     "hide-controller-setting"
   );
+  const hideKeybindingsCheckbox = document.getElementById(
+    "hide-keybindings-setting"
+  );
 
   // Init settings object in localStorage if it doesn't exist
   if (!localStorage.getItem("settings")) {
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "rewind-setting": false,
         "prefers-hd-setting": false,
         "hide-controller-setting": false,
+        "hide-keybinding-setting": false,
       })
     );
   } else {
@@ -43,6 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (hideControllerCheckbox.checked) {
       document.getElementById("controller").style.display = "none";
     }
+    // ----------------------------
+    hideKeybindingsCheckbox.checked = settings["hide-keybindings-setting"];
+    if (hideKeybindingsCheckbox.checked) {
+      document.getElementById("bindings-list").style.display = "none";
+    }
   }
 
   // Toggle settings in localStorage
@@ -51,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rewindCheckbox,
     prefersHDCheckbox,
     hideControllerCheckbox,
+    hideKeybindingsCheckbox,
   ]) {
     checkbox.addEventListener("change", (event) => {
       const settings = JSON.parse(localStorage.getItem("settings"));
@@ -96,6 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("controller").style.display = "none";
         } else {
           document.getElementById("controller").style.display = "flex";
+        }
+      }
+
+      // -----------------------------
+
+      if (event.target.id === "hide-keybindings-setting") {
+        if (event.target.checked) {
+          document.getElementById("bindings-list").style.display = "none";
+        } else {
+          document.getElementById("bindings-list").style.display = "flex";
         }
       }
     });
