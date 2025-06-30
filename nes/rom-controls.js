@@ -69,6 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
       "Donkey Kong": [
         { "Donkey Kong": `${BASE_URL}/roms/nes/DonkeyKong/DK.nes` },
         { "Donkey Kong Jr.": `${BASE_URL}/roms/nes/DonkeyKong/DKJ.nes` },
+        { "Donkey Kong 3": `${BASE_URL}/roms/nes/DonkeyKong/DK3.nes` },
       ],
       MegaMan: [
         { "Mega Man 1": `${BASE_URL}/roms/nes/MegaMan/MM1.nes` },
@@ -89,6 +90,11 @@ window.addEventListener("DOMContentLoaded", () => {
         { BurgerTime: `${BASE_URL}/roms/nes/Other/BT.nes` },
         { "Kid Icarus": `${BASE_URL}/roms/nes/Other/KI.nes` },
         { Lemmings: `${BASE_URL}/roms/nes/Other/L.nes` },
+        { "EarthBound Zero": `${BASE_URL}/roms/nes/Other/EZ.nes` },
+        { Arkanoid: `${BASE_URL}/roms/nes/Other/A.nes` },
+        { "Balloon Fight": `${BASE_URL}/roms/nes/Other/BF.nes` },
+        { Yoshi: `${BASE_URL}/roms/nes/Other/Y.nes` },
+        { Pictionary: `${BASE_URL}/roms/nes/Other/P.nes` },
       ],
     };
 
