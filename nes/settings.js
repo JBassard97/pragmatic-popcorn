@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (prefersHDCheckbox.checked) {
     hdToggle.checked = true;
-    document.getElementById("nes-canvas").style.imageRendering = "pixelated";
+    document.getElementById("screen").style.imageRendering = "pixelated";
   }
 
   if (hideControllerCheckbox.checked) {
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (event.target.id === "prefers-hd-setting") {
         hdToggle.checked = event.target.checked;
-        document.getElementById("nes-canvas").style.imageRendering = event
+        document.getElementById("screen").style.imageRendering = event
           .target.checked
           ? "pixelated"
           : "auto";

@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NES Emulator</title>
+    <script src="./emu.js"></script>
+    <script src="./render-select.js"></script>
     <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
     <script src="./nes/nes-embed.js"></script>
     <script src="./nes/keyboard-controls.js"></script>
@@ -18,7 +20,13 @@
   </head>
   <body>
     <header>
-      <h2>NES EMU</h2>
+      <h2>
+        <select id="emu-select">
+          <option value="NES">NES</option>
+          <option value="GBA">GBA</option>
+        </select>
+        EMU
+      </h2>
       <div id="select-container"></div>
       <button
         tabindex="-1"
@@ -133,16 +141,10 @@
     </dialog>
 
     <div class="nes-container">
-      <canvas id="nes-canvas" width="256" height="240"></canvas>
+      <canvas id="screen" width="256" height="240"></canvas>
       <div class="rom-controls">
         <div class="buttons">
-          <button
-            id="power-continue"
-            tabindex="-1"
-            onkeydown="return false"
-            onselectstart="return false"
-            onclick="this.blur();"
-          >
+          <button id="power-continue" tabindex="-1" onclick="this.blur();">
             Power On
           </button>
           <button
@@ -191,11 +193,11 @@
           align-items: center;
           text-align: center;
           gap: 5px;
-          padding: 0 20px;
+          padding: 0 30px;
         "
       ></div>
     </div>
-
+    <!-- ------------------------------- -->
     <div id="controller">
       <div class="meta-buttons">
         <button

@@ -30,27 +30,27 @@ var nes = new jsnes.NES({
   },
 });
 
-function onAnimationFrame() {
-  animationFrameRequest = window.requestAnimationFrame(onAnimationFrame);
+function onAnimationFrameNES() {
+  animationFrameRequest = window.requestAnimationFrame(onAnimationFrameNES);
 
   // Update rewind system (if rewind module is loaded)
   if (typeof updateRewindSystem === "function") {
-    updateRewindSystem();
+    updateRewindSystemNES();
   }
 
   image.data.set(framebuffer_u8);
   canvas_ctx.putImageData(image, 0, 0);
 }
 
-function audio_remain() {
+function audio_remainNES() {
   return (audio_write_cursor - audio_read_cursor) & SAMPLE_MASK;
 }
 
-function audio_callback(event) {
+function audio_callbackNES(event) {
   var dst = event.outputBuffer;
   var len = dst.length;
 
-  if (audio_remain() < AUDIO_BUFFERING) nes.frame();
+  if (audio_remainNES() < AUDIO_BUFFERING) nes.frame();
 
   var dst_l = dst.getChannelData(0);
   var dst_r = dst.getChannelData(1);
@@ -64,7 +64,7 @@ function audio_callback(event) {
 }
 
 async function nes_init(canvas_id) {
-  var canvas = document.getElementById(canvas_id);
+  var canvas = document.getElementById(canvas_id || "screen");
   canvas_ctx = canvas.getContext("2d");
   image = canvas_ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -89,7 +89,7 @@ async function nes_init(canvas_id) {
       0,
       2
     );
-    script_processor.onaudioprocess = audio_callback;
+    script_processor.onaudioprocess = audio_callbackNES;
     script_processor.connect(audio_ctx.destination);
     audio_ctx.scriptProcessor = script_processor;
   }
@@ -97,12 +97,12 @@ async function nes_init(canvas_id) {
 
 async function nes_boot(rom_data) {
   nes.loadROM(rom_data);
-  autoLoad(currentRomPath);
+  autoLoadNES(currentRomPath);
 
   if (animationFrameRequest !== null) {
     window.cancelAnimationFrame(animationFrameRequest);
   }
-  animationFrameRequest = window.requestAnimationFrame(onAnimationFrame);
+  animationFrameRequest = window.requestAnimationFrame(onAnimationFrameNES);
 
   if (autoSaveIntervalId !== null) {
     clearInterval(autoSaveIntervalId);
@@ -111,7 +111,7 @@ async function nes_boot(rom_data) {
 
   const settings = JSON.parse(localStorage.getItem("settings") || "{}");
   if (settings["auto-save-setting"]) {
-    autoSaveIntervalId = setInterval(autoSaveWithIdle, 5000);
+    autoSaveIntervalId = setInterval(autoSaveWithIdleNES, 5000);
   }
 
   if (audio_ctx && audio_ctx.state === "running") {
@@ -144,7 +144,7 @@ async function nes_load_url(canvas_id, path) {
   req.send();
 }
 
-function powerOff() {
+function powerOffNES() {
   // Clear rewind buffer (if rewind module is loaded)
   if (typeof clearRewindBuffer === "function") {
     clearRewindBuffer();
@@ -160,7 +160,7 @@ function powerOff() {
     autoSaveIntervalId = null;
   }
 
-  const canvas = document.getElementById("nes-canvas");
+  const canvas = document.getElementById("screen");
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);

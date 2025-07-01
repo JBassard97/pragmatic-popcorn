@@ -14,7 +14,7 @@ var REWIND_CAPTURE_RATE = 3; // Capture every 3rd frame to save memory
  * Captures the current game state for rewind functionality
  * Should be called from the main animation loop
  */
-function captureRewindState() {
+function captureRewindStateNES() {
   // Only capture if NES emulator is available
   if (typeof nes === "undefined" || !nes) {
     return;
@@ -40,7 +40,7 @@ function captureRewindState() {
  * Rewinds the game exactly 5 seconds back
  * @returns {boolean} True if rewind was successful, false otherwise
  */
-function rewind5Seconds() {
+function rewind5SecondsNES() {
   // Check if NES emulator is available
   if (typeof nes === "undefined" || !nes) {
     console.warn("NES emulator not available for rewind");
@@ -113,7 +113,7 @@ function rewind5Seconds() {
 /**
  * Clears all rewind states (useful when loading a new ROM or powering off)
  */
-function clearRewindBuffer() {
+function clearRewindBufferNES() {
   rewindBuffer = [];
   rewindBufferIndex = 0;
   frameCounter = 0;
@@ -124,7 +124,7 @@ function clearRewindBuffer() {
  * Gets the current rewind buffer status
  * @returns {Object} Object containing buffer information
  */
-function getRewindBufferStatus() {
+function getRewindBufferStatusNES() {
   const totalStates = rewindBuffer.length;
   const maxSeconds = (totalStates / (60 / REWIND_CAPTURE_RATE)).toFixed(1);
 
@@ -140,7 +140,7 @@ function getRewindBufferStatus() {
  * Should be called from the main animation frame loop
  * Handles the frame counting and periodic state capture
  */
-function updateRewindSystem() {
+function updateRewindSystemNES() {
   const settings = JSON.parse(localStorage.getItem("settings") || "{}");
 
   if (!settings["rewind-setting"]) {
@@ -160,7 +160,7 @@ function updateRewindSystem() {
  * @param {string} buttonId - ID of the rewind button element
  * @param {string} rewindKey - Key to use for keyboard rewind (default: 'r')
  */
-function initializeRewindControls(buttonId = "rewind", rewindKey = "r") {
+function initializeRewindControlsNES(buttonId = "rewind", rewindKey = "r") {
   // Initialize rewind button
   const rewindBtn = document.getElementById(buttonId);
 
@@ -172,7 +172,7 @@ function initializeRewindControls(buttonId = "rewind", rewindKey = "r") {
       rewindBtn.blur(); // Remove focus after clicking
     });
 
-    console.log(`Rewind button initialized with ID: ${buttonId}`);
+    // console.log(`Rewind button initialized with ID: ${buttonId}`);
   } else {
     console.warn(`Rewind button with ID '${buttonId}' not found`);
   }
@@ -189,19 +189,19 @@ function initializeRewindControls(buttonId = "rewind", rewindKey = "r") {
     }
   });
 
-  console.log(
-    `Rewind keyboard control initialized with key: ${rewindKey.toUpperCase()}`
-  );
+  // console.log(
+  //   `Rewind keyboard control initialized with key: ${rewindKey.toUpperCase()}`
+  // );
 }
 
 // Export functions for use in other scripts (if using modules)
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = {
-    captureRewindState,
-    rewind5Seconds,
-    clearRewindBuffer,
-    getRewindBufferStatus,
-    updateRewindSystem,
-    initializeRewindControls,
-  };
-}
+// if (typeof module !== "undefined" && module.exports) {
+//   module.exports = {
+//     captureRewindState,
+//     rewind5Seconds,
+//     clearRewindBuffer,
+//     getRewindBufferStatus,
+//     updateRewindSystem,
+//     initializeRewindControls,
+//   };
+// }

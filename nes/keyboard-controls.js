@@ -18,7 +18,7 @@ if (!window.keybindings) {
   }
 }
 
-function keyboard(callback, event) {
+function keyboardNES(callback, event) {
   const player = 1;
 
   // Prevent unwanted behaviors like scrolling
@@ -43,9 +43,9 @@ function keyboard(callback, event) {
 }
 
 document.addEventListener("keydown", (event) => {
-  keyboard(nes.buttonDown, event);
+  keyboardNES(nes.buttonDown, event);
 });
 
 document.addEventListener("keyup", (event) => {
-  keyboard(nes.buttonUp, event);
+  keyboardNES(nes.buttonUp, event);
 });

@@ -113,7 +113,7 @@ dialog::backdrop {
 }
 
 /* === Canvas Styling === */
-#nes-canvas {
+#screen {
   aspect-ratio: 256 / 240;
   width: 90%;
   max-width: 475px;
@@ -285,12 +285,19 @@ input[type="checkbox"]:focus {
   border: 2px solid rgb(159, 159, 159);
 }
 
+#emu-select {
+  width: fit-content;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
 @media (hover: none) and (pointer: coarse) and (max-width: 550px) {
   header {
     padding: 0.25rem 0.5rem;
   }
 
-  #nes-canvas {
+  #screen {
     width: 90vw;
     max-width: none;
   }

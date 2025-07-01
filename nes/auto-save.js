@@ -1,4 +1,4 @@
-function autoSave() {
+function autoSaveNES() {
   if (!currentRomPath) return;
   try {
     const state = JSON.stringify(nes.toJSON());
@@ -8,17 +8,17 @@ function autoSave() {
   }
 }
 
-function autoSaveWithIdle() {
+function autoSaveWithIdleNES() {
   if (window.requestIdleCallback) {
     requestIdleCallback(() => {
-      autoSave();
+      autoSaveNES();
     });
   } else {
-    autoSave(); // Fallback for browsers without requestIdleCallback
+    autoSaveNES(); // Fallback for browsers without requestIdleCallback
   }
 }
 
-function autoLoad() {
+function autoLoadNES() {
   if (!currentRomPath) return;
   const json = localStorage.getItem(`nes_save_${currentRomPath}`);
   if (json) {
@@ -31,7 +31,7 @@ function autoLoad() {
   }
 }
 
-function filteredClear() {
+function filteredClearNES() {
   for (let i = localStorage.length - 1; i >= 0; i--) {
     const key = localStorage.key(i);
     if (key.startsWith("nes_save_")) {
@@ -40,13 +40,13 @@ function filteredClear() {
   }
 }
 
-function clearSave() {
-  filteredClear();
+function clearSaveNES() {
+  filteredClearNES();
   if (currentRomPath) {
-    nes_load_url("nes-canvas", currentRomPath);
+    nes_load_url("screen", currentRomPath);
   }
 }
 
-function hasSave(romPath) {
+function hasSaveNES(romPath) {
   return localStorage.getItem(`nes_save_${romPath}`) !== null;
 }
