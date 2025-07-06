@@ -61,8 +61,8 @@ function fadeOut(id, nextId, kill) {
 // 🎮 This is now the only way to load a ROM
 function runGBA(romUrl) {
   const canvas = document.getElementById("screen");
-  canvas.width = 480; // native GBA width
-  canvas.height = 320; // native GBA height
+  canvas.width = 360; // native GBA width
+  canvas.height = 240; // native GBA height
   canvas.style.imageRendering = "pixelated";
   // const multiplier = 2;
   // canvas.style.width = `${canvas.width * multiplier}px`;
