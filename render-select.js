@@ -74,7 +74,10 @@ function renderSelect() {
           "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
         },
       ],
-      Sonic: [{ "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` }],
+      Sonic: [
+        { "Sonic Advance 1": `${BASE_URL}/roms/gba/Sonic/SA1.gba` },
+        { "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` },
+      ],
     },
   };
 
@@ -142,8 +145,13 @@ function renderSelect() {
 
       if (!path) return;
 
+      // Temp pausing the emu to prevent stacking memory issues
+      if (!gba.paused) {
+        gba.pause();
+      }
+
+      // Allows audio to play
       await gba.audio.context.resume();
-      console.log("Audio context state:", gba.audio.context.state);
       runGBA(path);
     });
   }
