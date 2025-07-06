@@ -14,7 +14,7 @@ function renderSelect() {
   select.appendChild(defaultOption);
 
   const BASE_URL = "https://jbassard97.github.io/pragmatic-popcorn";
-  // const BASE_URL = "localhost:3000";
+  // const BASE_URL = "http://localhost:3000";
 
   const romlist = {
     NES: {
@@ -63,7 +63,15 @@ function renderSelect() {
     GBA: {
       Pokemon: [
         {
-          "Pokemon Pinball Ruby/Sapphire": `${BASE_URL}/roms/gba/PPRS.gba`,
+          "Pokemon Pinball Ruby/Sapphire": `${BASE_URL}/roms/gba/Pokemon/PPRS.gba`,
+        },
+        {
+          "Pokemon FireRed Version": `${BASE_URL}/roms/gba/Pokemon/FR.gba`,
+        },
+      ],
+      Zelda: [
+        {
+          "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
         },
       ],
     },
