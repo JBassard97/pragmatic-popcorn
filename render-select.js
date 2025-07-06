@@ -14,6 +14,7 @@ function renderSelect() {
   select.appendChild(defaultOption);
 
   const BASE_URL = "https://jbassard97.github.io/pragmatic-popcorn";
+  // const BASE_URL = "localhost:3000";
 
   const romlist = {
     NES: {
@@ -56,6 +57,7 @@ function renderSelect() {
         { "Balloon Fight": `${BASE_URL}/roms/nes/Other/BF.nes` },
         { Yoshi: `${BASE_URL}/roms/nes/Other/Y.nes` },
         { Pictionary: `${BASE_URL}/roms/nes/Other/P.nes` },
+        { Paperboy: `${BASE_URL}/roms/nes/Other/PB.nes` },
       ],
     },
     GBA: {
@@ -118,7 +120,14 @@ function renderSelect() {
         "space-between";
     });
   } else if (window.emu === "GBA") {
-    // 🔜 Prepare this later when GBA support is ready
+    select.addEventListener("change", async (e) => {
+      const path = e.target.value;
+      e.target.blur();
+
+      if (!path) return;
+
+      runGBA(path);
+    });
   }
 
   selectContainer.appendChild(select);

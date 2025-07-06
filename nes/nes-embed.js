@@ -65,6 +65,8 @@ function audio_callbackNES(event) {
 
 async function nes_init(canvas_id) {
   var canvas = document.getElementById(canvas_id || "screen");
+  canvas.width = 256; // Native NES Width
+  canvas.height = 240; // Native NES Height
   canvas_ctx = canvas.getContext("2d");
   image = canvas_ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 

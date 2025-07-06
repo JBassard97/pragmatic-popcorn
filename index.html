@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NES Emulator</title>
-    <script src="./emu.js"></script>
-    <script src="./render-select.js"></script>
+
+    <!-- NES -->
     <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
     <script src="./nes/nes-embed.js"></script>
     <script src="./nes/keyboard-controls.js"></script>
@@ -16,7 +16,32 @@
     <script src="./nes/auto-save.js"></script>
     <script src="./nes/rewind.js"></script>
     <script src="./nes/settings.js"></script>
+
+    <!-- GBA -->
+    <script src="./gba/js/util.js"></script>
+    <script src="./gba/js/core.js"></script>
+    <script src="./gba/js/arm.js"></script>
+    <script src="./gba/js/thumb.js"></script>
+    <script src="./gba/js/mmu.js"></script>
+    <script src="./gba/js/io.js"></script>
+    <script src="./gba/js/audio.js"></script>
+    <script src="./gba/js/video.js"></script>
+    <script src="./gba/js/video/proxy.js"></script>
+    <script src="./gba/js/video/software.js"></script>
+    <script src="./gba/js/irq.js"></script>
+    <script src="./gba/js/keypad.js"></script>
+    <script src="./gba/js/sio.js"></script>
+    <script src="./gba/js/savedata.js"></script>
+    <script src="./gba/js/gpio.js"></script>
+    <script src="./gba/js/gba.js"></script>
+    <script src="./gba/resources/xhr.js"></script>
+    <script src="./gba/gba-embed.js"></script>
+
+    <!-- All -->
+    <script src="./emu.js"></script>
+    <script src="./render-select.js"></script>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./screen.css" />
   </head>
   <body>
     <header>

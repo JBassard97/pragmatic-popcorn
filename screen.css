@@ -1,0 +1,25 @@
+/* === Canvas Styling === */
+#screen {
+  display: block;
+  margin: 0 auto;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#screen[data-emu="NES"] {
+  width: 90vw;
+  max-width: 400px;
+}
+
+@media (hover: none) and (pointer: coarse) and (max-width: 550px) {
+  #screen[data-emu="NES"] {
+    width: 90vw;
+    max-width: none;
+  }
+
+  #screen[data-emu="GBA"] {
+    max-width: 350px;
+    height: auto;
+  }
+}

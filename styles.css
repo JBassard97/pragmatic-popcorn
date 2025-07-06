@@ -80,6 +80,7 @@ dialog::backdrop {
 
 .all-settings p span {
   font-style: italic;
+  font-size: x-small;
 }
 
 .close-remap,
@@ -110,17 +111,6 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* === Canvas Styling === */
-#screen {
-  aspect-ratio: 256 / 240;
-  width: 90%;
-  max-width: 475px;
-  height: auto;
-  background-color: black;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 /* === ROM Control Panel === */
@@ -184,11 +174,6 @@ option {
   background-color: black;
   font-style: italic;
 }
-
-/* === Responsive Font Scaling (Optional) === */
-/* html {
-  font-size: clamp(14px, 2vw, 18px);
-} */
 
 #hd-toggle-label {
   font-size: 16px;
@@ -297,18 +282,14 @@ input[type="checkbox"]:focus {
     padding: 0.25rem 0.5rem;
   }
 
-  #screen {
-    width: 90vw;
-    max-width: none;
-  }
-
   .rom-controls {
     padding-top: 0.25rem;
     /* padding-bottom: 2rem; */
   }
 
-  /* .rom-controls .buttons {
-  } */
+  h2 {
+    font-size: 14px;
+  }
 
   #controller {
     min-height: 32vh;

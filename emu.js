@@ -7,12 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Current emulation mode:", window.emu);
   select.value = window.emu;
 
+  const canvas = document.getElementById("screen");
+  canvas.setAttribute("data-emu", window.emu);
+
   // Update window.emu when the user changes the emulator
   select.addEventListener("change", (event) => {
     window.emu = event.target.value;
+    canvas.setAttribute("data-emu", window.emu);
     localStorage.setItem("current-emu", JSON.stringify(event.target.value));
     renderSelect(); // update rom select for current-emu
-    console.log("Current emulation mode:", window.emu);
+    console.log("Current emu mode:", window.emu);
   });
 
   renderSelect();
