@@ -74,6 +74,7 @@ function renderSelect() {
           "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
         },
       ],
+      Sonic: [{ "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` }],
     },
   };
 
@@ -85,7 +86,12 @@ function renderSelect() {
       const [label, value] = Object.entries(game)[0];
       const option = document.createElement("option");
       option.value = value;
-      option.textContent = label;
+
+      if (window.emu === "NES" && hasSaveNES(value)) {
+        option.textContent = label + " (Continue)";
+      } else {
+        option.textContent = label;
+      }
       group.appendChild(option);
     });
 
@@ -126,6 +132,8 @@ function renderSelect() {
 
       document.querySelector(".rom-controls").style.justifyContent =
         "space-between";
+
+      renderSelect(); // Refreshing select erases any instance of (Continue)
     });
   } else if (window.emu === "GBA") {
     select.addEventListener("change", async (e) => {
@@ -134,6 +142,8 @@ function renderSelect() {
 
       if (!path) return;
 
+      await gba.audio.context.resume();
+      console.log("Audio context state:", gba.audio.context.state);
       runGBA(path);
     });
   }

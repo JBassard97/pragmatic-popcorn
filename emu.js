@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.emu = JSON.parse(localStorage.getItem("current-emu")) || "NES";
   const select = document.getElementById("emu-select");
 
+  // Set document title to match emu mode
+  document.title = window.emu + " Emulator";
+
   // Set the select element to match the default if needed
   console.log("Current emulation mode:", window.emu);
   select.value = window.emu;
@@ -13,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update window.emu when the user changes the emulator
   select.addEventListener("change", (event) => {
     window.emu = event.target.value;
+    document.title = window.emu + " Emulator";
     canvas.setAttribute("data-emu", window.emu);
     localStorage.setItem("current-emu", JSON.stringify(event.target.value));
     renderSelect(); // update rom select for current-emu
