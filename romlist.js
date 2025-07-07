@@ -46,6 +46,7 @@ const romlist = {
     ],
   },
   GBA: {
+    Mario: [{ "Mario Kart - Super Circuit": `${BASE_URL}/roms/gba/Mario/MKSC.gba` }],
     Pokemon: [
       {
         "Pokemon Pinball Ruby/Sapphire": `${BASE_URL}/roms/gba/Pokemon/PPRS.gba`,
@@ -60,6 +61,8 @@ const romlist = {
       },
     ],
     Sonic: [
+      { "Sonic the Hedgehog - Genesis": `${BASE_URL}/roms/gba/Sonic/SHG.gba` },
+
       { "Sonic Advance 1": `${BASE_URL}/roms/gba/Sonic/SA1.gba` },
       { "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` },
     ],
