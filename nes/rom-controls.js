@@ -33,11 +33,21 @@ window.addEventListener("DOMContentLoaded", () => {
       hdToggleLabel.style.display = "none";
       isPoweredOn = false;
     }
+    powerBtn.blur();
   });
 
-  clearBtn.addEventListener("click", () => {
-    clearBtn.blur();
-    clearSaveNES();
+  clearBtn.addEventListener("click", async () => {
+    audio_ctx.suspend();
+    if (
+      confirm(
+        "Are your sure you want to clear existing save data for this ROM?"
+      )
+    ) {
+      clearSaveNES();
+      clearBtn.blur();
+    } else {
+      await audio_ctx.resume(); return;
+    }
   });
 
   hdToggle.addEventListener("change", (e) => {

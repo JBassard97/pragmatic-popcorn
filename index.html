@@ -39,6 +39,7 @@
 
     <!-- All -->
     <script src="./emu.js"></script>
+    <script src="./romlist.js"></script>
     <script src="./render-select.js"></script>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./screen.css" />
@@ -67,48 +68,50 @@
       <h2 style="text-decoration: underline">Settings</h2>
       <br />
       <div class="all-settings">
-        <label for="auto-save-setting"
-          >Auto Save <input type="checkbox" id="auto-save-setting" />
-        </label>
-        <p>
-          Enables/Disables saving game state every 5 seconds.
-          <span
-            >(May decrease performance at the cost of getting far in your
-            games)</span
-          >
-        </p>
-        <label for="rewind-setting"
-          >Rewind <input type="checkbox" id="rewind-setting"
-        /></label>
-        <p>
-          Enables/Disables the ability to rewind games 5 seconds at a time - to
-          a certain point.
-          <span
-            >(This will negatively affect performance at the cost of getting
-            perfect outcomes in your games.)</span
-          >
-        </p>
-        <label for="prefers-hd-setting"
-          >Prefer HD <input type="checkbox" id="prefers-hd-setting"
-        /></label>
-        <p>
-          Automatically selects HD setting every time.
-          <span>(No effect on performance, purely aesthetic.)</span>
-        </p>
+        <div class="nes-settings">
+          <label for="auto-save-setting"
+            >Auto Save <input type="checkbox" id="auto-save-setting" />
+          </label>
+          <p>
+            Enables/Disables saving game state every 5 seconds.
+            <span
+              >(May decrease performance at the cost of getting far in your
+              games)</span
+            >
+          </p>
+          <label for="rewind-setting"
+            >Rewind <input type="checkbox" id="rewind-setting"
+          /></label>
+          <p>
+            Enables/Disables the ability to rewind games 5 seconds at a time -
+            to a certain point.
+            <span
+              >(This will negatively affect performance at the cost of getting
+              perfect outcomes in your games.)</span
+            >
+          </p>
+          <label for="prefers-hd-setting"
+            >Prefer HD <input type="checkbox" id="prefers-hd-setting"
+          /></label>
+          <p>
+            Automatically selects HD setting every time.
+            <span>(No effect on performance, purely aesthetic.)</span>
+          </p>
+          <label for="hide-controller-setting"
+            >Hide Keybinding Guide
+            <input type="checkbox" id="hide-keybindings-setting"
+          /></label>
+          <p>
+            Hides Keybindings Display Guide.
+            <span>(No effect on performance, purely aesthetic.)</span>
+          </p>
+        </div>
         <label for="hide-controller-setting"
           >Hide Controller UI
           <input type="checkbox" id="hide-controller-setting"
         /></label>
         <p>
           Hides the D-Pad, Start/Select, and A/B buttons.
-          <span>(No effect on performance, purely aesthetic.)</span>
-        </p>
-        <label for="hide-controller-setting"
-          >Hide Keybinding Guide
-          <input type="checkbox" id="hide-keybindings-setting"
-        /></label>
-        <p>
-          Hides Keybindings Display Guide.
           <span>(No effect on performance, purely aesthetic.)</span>
         </p>
       </div>
@@ -169,15 +172,12 @@
       <canvas id="screen" width="256" height="240"></canvas>
       <div class="rom-controls">
         <div class="buttons">
-          <button id="power-continue" tabindex="-1" onclick="this.blur();">
-            Power On
-          </button>
+          <button id="power-continue" tabindex="-1">Power On</button>
           <button
             id="clear-save"
             tabindex="-1"
             onkeydown="return false"
             onselectstart="return false"
-            onclick="this.blur();"
           >
             Clear Save
           </button>
