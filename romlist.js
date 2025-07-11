@@ -55,6 +55,10 @@ const romlist = {
         "Pokemon FireRed Version": `${BASE_URL}/roms/gba/Pokemon/FR.gba`,
       },
     ],
+    Kirby: [
+      { "Kirby & the Amazing Mirror": `${BASE_URL}/roms/gba/Kirby/KAM.gba` },
+      { "Kirby's Dream Land 2 (TEST)": `${BASE_URL}/roms/gba/Kirby/KDL2.gb` },
+    ],
     Zelda: [
       {
         "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
