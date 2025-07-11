@@ -46,7 +46,9 @@ const romlist = {
     ],
   },
   GBA: {
-    Mario: [{ "Mario Kart - Super Circuit": `${BASE_URL}/roms/gba/Mario/MKSC.gba` }],
+    Mario: [
+      { "Mario Kart - Super Circuit": `${BASE_URL}/roms/gba/Mario/MKSC.gba` },
+    ],
     Pokemon: [
       {
         "Pokemon Pinball Ruby/Sapphire": `${BASE_URL}/roms/gba/Pokemon/PPRS.gba`,
@@ -64,11 +66,27 @@ const romlist = {
         "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
       },
     ],
+    Metroid: [
+      { "Metroid: Zero Mission": `${BASE_URL}/roms/gba/Metroid/MZM.gba` },
+    ],
+    Castlevania: [
+      {
+        "Castlevania - Aria of Sorrow": `${BASE_URL}/roms/gba/Castlevania/CAS.gba`,
+      },
+    ],
     Sonic: [
       { "Sonic the Hedgehog - Genesis": `${BASE_URL}/roms/gba/Sonic/SHG.gba` },
 
       { "Sonic Advance 1": `${BASE_URL}/roms/gba/Sonic/SA1.gba` },
       { "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` },
+    ],
+    Other: [
+      {
+        "LEGO Star Wars - The Video Game": `${BASE_URL}/roms/gba/Other/LSW.gba`,
+      },
+      {
+        "LEGO Star Wars II - The Original Trilogy": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
+      },
     ],
   },
 };
