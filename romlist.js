@@ -65,6 +65,7 @@ const romlist = {
         "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
       },
     ],
+    EarthBound: [{ "Mother 3": `${BASE_URL}/roms/gba/EarthBound/M3.gba` }],
     Metroid: [
       { "Metroid: Zero Mission": `${BASE_URL}/roms/gba/Metroid/MZM.gba` },
     ],
@@ -80,6 +81,7 @@ const romlist = {
       { "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` },
     ],
     Other: [
+      { Monopoly: `${BASE_URL}/roms/gba/Other/M.gba` },
       {
         "LEGO Star Wars - The Video Game": `${BASE_URL}/roms/gba/Other/LSW.gba`,
       },
