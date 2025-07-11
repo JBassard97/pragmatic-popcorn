@@ -45,4 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "%c Styled console.log!",
     "color: pink; background-color: black; font-style: italic; font-size: 20px;"
   );
+
+  //
 });
