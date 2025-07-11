@@ -59,7 +59,6 @@ const romlist = {
     ],
     Kirby: [
       { "Kirby & the Amazing Mirror": `${BASE_URL}/roms/gba/Kirby/KAM.gba` },
-      { "Kirby's Dream Land 2 (TEST)": `${BASE_URL}/roms/gba/Kirby/KDL2.gb` },
     ],
     Zelda: [
       {
