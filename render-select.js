@@ -45,7 +45,9 @@ function renderSelect() {
       );
 
       if (existingKey && !existingKey.endsWith(path)) {
-        audio_ctx.suspend();
+        if (audio_ctx) {
+          await audio_ctx.suspend();
+        }
         if (
           confirm(
             "Save data already exists for another ROM. Playing this one will overwrite it. Do you want to continue?"
@@ -54,7 +56,9 @@ function renderSelect() {
           clearSaveNES();
         } else {
           await nes_load_url("screen", romURL);
-          await audio_ctx.resume();
+          if (audio_ctx) {
+            await audio_ctx.resume();
+          }
           return;
         }
       }
