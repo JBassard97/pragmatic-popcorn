@@ -48,13 +48,15 @@ const romlist = {
   GBA: {
     Mario: [
       { "Mario Kart - Super Circuit": `${BASE_URL}/roms/gba/Mario/MKSC.gba` },
+      { "Mario Party Advance": `${BASE_URL}/roms/gba/Mario/MPA.gba` },
     ],
     Pokemon: [
-      {
-        "Pokemon Pinball Ruby/Sapphire": `${BASE_URL}/roms/gba/Pokemon/PPRS.gba`,
-      },
+      { "Pokemon Emerald Version": `${BASE_URL}/roms/gba/Pokemon/E.gba` },
       {
         "Pokemon FireRed Version": `${BASE_URL}/roms/gba/Pokemon/FR.gba`,
+      },
+      {
+        "Pokemon Pinball Ruby/Sapphire": `${BASE_URL}/roms/gba/Pokemon/PPRS.gba`,
       },
     ],
     Kirby: [
@@ -76,18 +78,28 @@ const romlist = {
     ],
     Sonic: [
       { "Sonic the Hedgehog - Genesis": `${BASE_URL}/roms/gba/Sonic/SHG.gba` },
-
       { "Sonic Advance 1": `${BASE_URL}/roms/gba/Sonic/SA1.gba` },
       { "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` },
     ],
+    Spyro: [
+      {
+        "Legend of Spyro - A New Beginning": `${BASE_URL}/roms/gba/Spyro/NB.gba`,
+      },
+      {
+        "Legend of Spyro - The Eternal Night": `${BASE_URL}/roms/gba/Spyro/EN.gba`,
+      },
+    ],
     Other: [
-      { Monopoly: `${BASE_URL}/roms/gba/Other/M.gba` },
       {
-        "LEGO Star Wars - The Video Game": `${BASE_URL}/roms/gba/Other/LSW.gba`,
+        "LEGO Star Wars - The Video Game (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Other/LSW.gba`,
       },
       {
-        "LEGO Star Wars II - The Original Trilogy": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
+        "LEGO Star Wars II - The Original Trilogy (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
       },
+      {
+        "Namco Museum - 50th Anniversary Edition": `${BASE_URL}/roms/gba/Other/NM.gba`,
+      },
+      { "Tetris Worlds": `${BASE_URL}/roms/gba/Other/TW.gba` },
     ],
   },
 };
