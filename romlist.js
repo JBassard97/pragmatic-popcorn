@@ -61,13 +61,16 @@ const romlist = {
     ],
     Kirby: [
       { "Kirby & the Amazing Mirror": `${BASE_URL}/roms/gba/Kirby/KAM.gba` },
+      {
+        "Kirby - Nightmare in Dreamland": `${BASE_URL}/roms/gba/Kirby/KND.gba`,
+      },
     ],
     Zelda: [
       {
         "Legend of Zelda - The Minish Cap": `${BASE_URL}/roms/gba/Zelda/MC.gba`,
       },
     ],
-    EarthBound: [{ "Mother 3": `${BASE_URL}/roms/gba/EarthBound/M3.gba` }],
+    EarthBound: [{ "Mother 3": `${BASE_URL}/roms/gba/Earthbound/M3.gba` }],
     Metroid: [
       { "Metroid: Zero Mission": `${BASE_URL}/roms/gba/Metroid/MZM.gba` },
     ],
@@ -83,10 +86,7 @@ const romlist = {
     ],
     Spyro: [
       {
-        "Legend of Spyro - A New Beginning": `${BASE_URL}/roms/gba/Spyro/NB.gba`,
-      },
-      {
-        "Legend of Spyro - The Eternal Night": `${BASE_URL}/roms/gba/Spyro/EN.gba`,
+        "Legend of Spyro - The Eternal Night (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Spyro/EN.gba`,
       },
     ],
     Other: [
@@ -96,10 +96,6 @@ const romlist = {
       {
         "LEGO Star Wars II - The Original Trilogy (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
       },
-      {
-        "Namco Museum - 50th Anniversary Edition": `${BASE_URL}/roms/gba/Other/NM.gba`,
-      },
-      { "Tetris Worlds": `${BASE_URL}/roms/gba/Other/TW.gba` },
     ],
   },
 };
