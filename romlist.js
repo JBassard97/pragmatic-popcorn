@@ -97,7 +97,7 @@ const romlist = {
       {
         "LEGO Star Wars II - The Original Trilogy (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
       },
-      { "Bit Generations - Orbital": `${BASE_URL}/roms/gba/Other/BGO.gba` },
+      { "Konami Krazy Racers": `${BASE_URL}/roms/gba/Other/KKR.gba` },
     ],
   },
 };
