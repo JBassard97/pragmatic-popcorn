@@ -82,6 +82,7 @@ const romlist = {
     Sonic: [
       { "Sonic the Hedgehog - Genesis": `${BASE_URL}/roms/gba/Sonic/SHG.gba` },
       { "Sonic Advance 1": `${BASE_URL}/roms/gba/Sonic/SA1.gba` },
+      { "Sonic Advance 2": `${BASE_URL}/roms/gba/Sonic/SA2.gba` },
       { "Sonic Advance 3": `${BASE_URL}/roms/gba/Sonic/SA3.gba` },
     ],
     Spyro: [
@@ -96,6 +97,7 @@ const romlist = {
       {
         "LEGO Star Wars II - The Original Trilogy (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
       },
+      { "Bit Generations - Orbital": `${BASE_URL}/roms/gba/Other/BGO.gba` },
     ],
   },
 };

@@ -199,6 +199,7 @@ input[type="checkbox"]:focus {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  margin-bottom: 0.5rem;
 }
 
 .controller-row-1 button {
@@ -287,6 +288,15 @@ input[type="checkbox"]:focus {
   font-size: inherit;
   color: inherit;
   font-weight: inherit;
+}
+
+html.jt-console-panel-active #jt-console-panel {
+  display: block;
+  display: none;
+}
+
+#jt-bar-inner {
+  display: none;
 }
 
 @media (hover: none) and (pointer: coarse) and (max-width: 550px) {
