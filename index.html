@@ -51,6 +51,7 @@
         <select id="emu-select">
           <option value="NES">NES</option>
           <option value="GBA">GBA</option>
+          <option value="DS">DS</option>
         </select>
         EMU
       </h2>
@@ -171,6 +172,75 @@
 
     <div class="nes-container">
       <canvas id="screen" width="256" height="240"></canvas>
+      <!-- DS -->
+      <div class="ds-container" style="display: none">
+        <desmond-player id="player"></desmond-player>
+        <script src="./ds/embed.js"></script>
+        <script>
+          // reaching into shadow DOM to set styles
+          const actualDScontainer = document
+            .getElementById("player")
+            .shadowRoot.querySelector("#player");
+          actualDScontainer.style =
+            "display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px;";
+        </script>
+        <div class="ds-button-map">
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              color: lightgreen;
+            "
+          >
+            <p>Start: <kbd>Enter</kbd></p>
+            <p>Select: <kbd>Shift</kbd></p>
+            <p>Lid: <kpd>Backspace</kpd></p>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              color: lightgoldenrodyellow;
+            "
+          >
+            <p>L: <kbd>Q</kbd></p>
+            <p>R: <kbd>P</kbd></p>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              color: lightblue;
+            "
+          >
+            <p>A: <kbd>L</kbd></p>
+            <p>B: <kbd>K</kbd></p>
+            <p>X: <kbd>O</kbd></p>
+            <p>Y: <kbd>I</kbd></p>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              color: lightcoral;
+            "
+          >
+            <p>Up: <kbd>W</kbd></p>
+            <p>Down: <kbd>S</kbd></p>
+            <p>Left: <kbd>A</kbd></p>
+            <p>Right: <kbd>D</kbd></p>
+          </div>
+        </div>
+      </div>
+      <!---------------------->
       <div class="rom-controls">
         <div class="buttons">
           <button id="power-continue" tabindex="-1">Power On</button>

@@ -105,6 +105,16 @@ function renderSelect() {
       await gba.audio.context.resume();
       runGBA(path);
     });
+  } else if (window.emu === "DS") {
+    select.addEventListener("change", async (e) => {
+      const path = e.target.value;
+      e.target.blur();
+      if (!path) return;
+
+      document.getElementById("player").loadURL(path, function () {
+        player.enableMicrophone();
+      });
+    });
   }
 
   selectContainer.appendChild(select);

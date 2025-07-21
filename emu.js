@@ -3,10 +3,20 @@ const showOrHideSettings = (emu) => {
     case "NES":
       document.querySelector(".nes-settings").style.display = "inline-block";
       document.querySelector(".controller-row-1").style.display = "none";
+      document.getElementById("screen").style.display = "inline-block";
+      document.querySelector(".ds-container").style.display = "none";
       break;
     case "GBA":
       document.querySelector(".nes-settings").style.display = "none";
       document.querySelector(".controller-row-1").style.display = "flex";
+      document.getElementById("screen").style.display = "inline-block";
+      document.querySelector(".ds-container").style.display = "none";
+      break;
+    case "DS":
+      document.querySelector(".nes-settings").style.display = "none";
+      document.getElementById("controller").style.display = "none";
+      document.getElementById("screen").style.display = "none";
+      document.querySelector(".ds-container").style.display = "inline-block";
       break;
     default:
       break;

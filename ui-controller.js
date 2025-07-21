@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
       : "flex";
   }
 
+  if (window.emu === "DS") {
+    controller.style.display = "none";
+  }
+
   // GBA control bitmask indices
   const gbaButtonMap = {
     A: 0,

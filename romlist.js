@@ -100,4 +100,12 @@ const romlist = {
       { "Konami Krazy Racers": `${BASE_URL}/roms/gba/Other/KKR.gba` },
     ],
   },
+  DS: {
+    Pokemon: [{ "Pokemon Platinum": `./roms/ds/Pokemon/PP.nds` }],
+    Mario: [
+      { "Super Mario 64 DS": `./roms/ds/Mario/SM64DS.nds` },
+      { "Mario & Luigi - Bowser's Inside Story": `./roms/ds/Mario/MLBIS.nds` },
+    ],
+    Sonic: [{ "Sonic Rush": `./roms/ds/Sonic/SR.nds` }],
+  },
 };
