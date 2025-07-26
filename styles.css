@@ -203,8 +203,8 @@ input[type="checkbox"]:focus {
 }
 
 .controller-row-1 button {
-  height: 30px;
-  width: 80px;
+  height: 20px;
+  width: 85px;
 }
 
 .controller-row-2 {
@@ -232,6 +232,7 @@ input[type="checkbox"]:focus {
 
 .meta-buttons {
   gap: 5px;
+  margin-top: 10px;
 }
 
 .ab-buttons .controller-button {
