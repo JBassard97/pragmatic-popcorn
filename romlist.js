@@ -100,6 +100,7 @@ const romlist = {
       { "Konami Krazy Racers": `${BASE_URL}/roms/gba/Other/KKR.gba` },
     ],
   },
+  // DS roms are not hosted on GitHub Pages due to size limitations
   DS: {
     Pokemon: [{ "Pokemon Platinum": `./roms/ds/Pokemon/PP.nds` }],
     Mario: [
@@ -107,5 +108,11 @@ const romlist = {
       { "Mario & Luigi - Bowser's Inside Story": `./roms/ds/Mario/MLBIS.nds` },
     ],
     Sonic: [{ "Sonic Rush": `./roms/ds/Sonic/SR.nds` }],
+    Kirby: [{ "Kirby Super Star Ultra": `./roms/ds/Kirby/KSSU.nds` }],
+    Other: [
+      {
+        "KORG M01 - Music Workstation (WARNING: Glitched Audio)": `./roms/ds/Other/KORG.nds`,
+      },
+    ],
   },
 };

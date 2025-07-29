@@ -182,7 +182,7 @@
             .getElementById("player")
             .shadowRoot.querySelector("#player");
           actualDScontainer.style =
-            "display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px;";
+            "width: 100%; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: center; align-items: center; gap: 5px;";
         </script>
         <div class="ds-button-map">
           <div
@@ -192,6 +192,7 @@
               gap: 10px;
               flex-wrap: wrap;
               color: lightgreen;
+              margin-top: 2rem;
             "
           >
             <p>Start: <kbd>Enter</kbd></p>
@@ -422,12 +423,8 @@
           </button>
         </div>
       </div>
-      <div style="position: absolute; bottom: 0;">
-        <label
-          for="dpad-scale"
-          style="text-align: center;"
-          >Button Scale</label
-        >
+      <div style="position: absolute; bottom: 0">
+        <label for="dpad-scale" style="text-align: center">Button Scale</label>
         <input
           type="range"
           id="dpad-scale"

@@ -2068,7 +2068,7 @@ var player = document.querySelector("desmond-player");
 if (player) {
   var shadow = player.attachShadow({ mode: "open" });
   shadow.innerHTML =
-    '<div id="player">\n        <canvas id="top" width="256" height="192"></canvas>\n        <canvas id="bottom" width="256" height="192"></canvas>';
+    '<div id="player">\n        <canvas id="top" width="256" height="192" style="transform: scale(1.25); margin-top: 2rem; margin-bottom: 1rem;"></canvas>\n        <canvas id="bottom" width="256" height="192" style="transform: scale(1.25); margin-top: 2rem;"></canvas>';
   var getFileBlob = function (e, t) {
       var r = new XMLHttpRequest();
       r.open("GET", e),
@@ -5824,3 +5824,5 @@ if (
     Module.preInit.pop()();
 var shouldRunNow = !0;
 Module.noInitialRun && (shouldRunNow = !1), run();
+
+256
