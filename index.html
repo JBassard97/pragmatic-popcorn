@@ -89,25 +89,19 @@
       <h2 style="text-decoration: underline">Settings</h2>
       <br />
       <div class="all-settings">
-        <button id="localStorage-button">Save localStorage State</button>
+        <div class="export-settings"></div>
         <script>
-          document
-            .getElementById("localStorage-button")
-            .addEventListener("click", () => {
-              try {
-                const data = JSON.stringify(localStorage, null, 2);
-                navigator.clipboard
-                  .writeText(data)
-                  .then(() => {
-                    alert("localStorage copied to clipboard!");
-                  })
-                  .catch((err) => {
-                    alert("Failed to copy: " + err);
-                  });
-              } catch (e) {
-                alert("Error serializing localStorage: " + e);
-              }
-            });
+          Object.keys(localStorage).forEach((key) => {
+            const value = localStorage.getItem(key);
+            const btn = document.createElement("button");
+            btn.textContent = `Copy "${key}"`;
+            btn.onclick = () => {
+              navigator.clipboard.writeText(value).then(() => {
+                alert(`Copied value of "${key}"`);
+              });
+            };
+            document.querySelector(".export-settings").appendChild(btn);
+          });
         </script>
         <div class="nes-settings">
           <label for="auto-save-setting"
