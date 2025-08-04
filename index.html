@@ -89,7 +89,7 @@
       <h2 style="text-decoration: underline">Settings</h2>
       <br />
       <div class="all-settings">
-        <div class="export-settings"></div>
+        <div class="export-each-settings"></div>
         <script>
           Object.keys(localStorage).forEach((key) => {
             const value = localStorage.getItem(key);
@@ -100,7 +100,22 @@
                 alert(`Copied value of "${key}"`);
               });
             };
-            document.querySelector(".export-settings").appendChild(btn);
+            document.querySelector(".export-each-settings").appendChild(btn);
+          });
+        </script>
+        <button class="copy-all">Copy ALL localStorage</button>
+        <script>
+          document.querySelector(".copy-all").addEventListener("click", () => {
+            const text = JSON.stringify(localStorage, null, 2);
+            const blob = new Blob([text], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "localStorage.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
           });
         </script>
         <div class="nes-settings">
