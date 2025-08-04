@@ -20,6 +20,8 @@ const showOrHideSettings = (emu) => {
       document.getElementById("screen").style.display = "none";
       document.querySelector(".ds-container").style.display = "inline-block";
       break;
+    case "GB":
+      break;
     default:
       break;
   }

@@ -36,6 +36,24 @@
     <script src="./gba/resources/xhr.js"></script>
     <script src="./gba/gba-embed.js"></script>
 
+    <!-- GB/GBC -->
+    <!-- <script src="./gb/js/other/windowStack.js"></script>
+    <script src="./gb/js/other/terminal.js"></script>
+    <script src="./gb/js/other/gui.js"></script>
+    <script src="./gb/js/other/base64.js"></script>
+    <script src="./gb/js/other/json2.js"></script>
+    <script src="./gb/js/other/swfobject.js"></script>
+    <script src="./gb/js/other/resampler.js"></script>
+    <script src="./gb/js/other/XAudioServer.js"></script>
+    <script src="./gb/js/other/resize.js"></script>
+    <script src="./gb/js/GameBoyCore.js"></script>
+    <script src="./gb/js/GameBoyIO.js"></script>
+    <script>
+      var DEBUG_MESSAGES = false;
+      var DEBUG_WINDOWING = false;
+    </script>
+    <script src="./gb/embed.js"></script> -->
+
     <!-- All -->
     <script src="./emu.js"></script>
     <script src="./romlist.js"></script>
@@ -52,6 +70,7 @@
           <option value="NES">NES</option>
           <option value="GBA">GBA</option>
           <option value="DS">DS</option>
+          <!-- <option value="GB">GB</option> -->
         </select>
         EMU
       </h2>
@@ -70,6 +89,26 @@
       <h2 style="text-decoration: underline">Settings</h2>
       <br />
       <div class="all-settings">
+        <button id="localStorage-button">Save localStorage State</button>
+        <script>
+          document
+            .getElementById("localStorage-button")
+            .addEventListener("click", () => {
+              try {
+                const data = JSON.stringify(localStorage, null, 2);
+                navigator.clipboard
+                  .writeText(data)
+                  .then(() => {
+                    alert("localStorage copied to clipboard!");
+                  })
+                  .catch((err) => {
+                    alert("Failed to copy: " + err);
+                  });
+              } catch (e) {
+                alert("Error serializing localStorage: " + e);
+              }
+            });
+        </script>
         <div class="nes-settings">
           <label for="auto-save-setting"
             >Auto Save <input type="checkbox" id="auto-save-setting" />

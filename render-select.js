@@ -115,6 +115,27 @@ function renderSelect() {
         player.enableMicrophone();
       });
     });
+  } else if (window.emu === "GB") {
+    select.addEventListener("change", async (e) => {
+      const path = e.target.value;
+      e.target.blur();
+      if (!path) return;
+      // LOAD GB ROM HERE
+      windowingInitialize();
+
+      fetch(path)
+        .then((response) => response.arrayBuffer())
+        .then((buffer) => {
+          const binaryString = new Uint8Array(buffer).reduce(
+            (data, byte) => data + String.fromCharCode(byte),
+            ""
+          );
+          start(mainCanvas, binaryString); // Start the emulator
+        })
+        .catch((err) => {
+          console.error("Failed to load ROM:", err);
+        });
+    });
   }
 
   selectContainer.appendChild(select);

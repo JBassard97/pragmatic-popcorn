@@ -115,4 +115,7 @@ const romlist = {
       },
     ],
   },
+  GB: {
+    Kirby: [{ "Kirby's Dream Land 2": `./roms/gb/Kirby/KDL2.gb` }],
+  },
 };
