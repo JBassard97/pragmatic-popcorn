@@ -98,6 +98,7 @@ const romlist = {
         "LEGO Star Wars II - The Original Trilogy (WARNING: Glitched Audio)": `${BASE_URL}/roms/gba/Other/LSW2.gba`,
       },
       { "Konami Krazy Racers": `${BASE_URL}/roms/gba/Other/KKR.gba` },
+      { Chessmaster: `${BASE_URL}/roms/gba/Other/CM.gba` },
     ],
   },
   // DS roms are not hosted on GitHub Pages due to size limitations
