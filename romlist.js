@@ -101,7 +101,6 @@ const romlist = {
       { Chessmaster: `${BASE_URL}/roms/gba/Other/CM.gba` },
     ],
   },
-  // DS roms are not hosted on GitHub Pages due to size limitations
   DS: {
     Pokemon: [{ "Pokemon Platinum": `./roms/ds/Pokemon/PP.nds` }],
     Mario: [
@@ -110,11 +109,7 @@ const romlist = {
     ],
     Sonic: [{ "Sonic Rush": `./roms/ds/Sonic/SR.nds` }],
     Kirby: [{ "Kirby Super Star Ultra": `./roms/ds/Kirby/KSSU.nds` }],
-    Other: [
-      {
-        "KORG M01 - Music Workstation (WARNING: Glitched Audio)": `./roms/ds/Other/KORG.nds`,
-      },
-    ],
+    Other: [{ Chessmaster: `./roms/ds/Other/CM.nds` }],
   },
   GB: {
     Kirby: [{ "Kirby's Dream Land 2": `./roms/gb/Kirby/KDL2.gb` }],
