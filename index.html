@@ -89,35 +89,6 @@
       <h2 style="text-decoration: underline">Settings</h2>
       <br />
       <div class="all-settings">
-        <div class="export-each-settings"></div>
-        <script>
-          Object.keys(localStorage).forEach((key) => {
-            const value = localStorage.getItem(key);
-            const btn = document.createElement("button");
-            btn.textContent = `Copy "${key}"`;
-            btn.onclick = () => {
-              navigator.clipboard.writeText(value).then(() => {
-                alert(`Copied value of "${key}"`);
-              });
-            };
-            document.querySelector(".export-each-settings").appendChild(btn);
-          });
-        </script>
-        <button class="copy-all">Copy ALL localStorage</button>
-        <script>
-          document.querySelector(".copy-all").addEventListener("click", () => {
-            const text = JSON.stringify(localStorage, null, 2);
-            const blob = new Blob([text], { type: "text/plain" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "localStorage.txt";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-          });
-        </script>
         <div class="nes-settings">
           <label for="auto-save-setting"
             >Auto Save <input type="checkbox" id="auto-save-setting" />
@@ -147,15 +118,15 @@
             Automatically selects HD setting every time.
             <span>(No effect on performance, purely aesthetic.)</span>
           </p>
-          <label for="hide-controller-setting"
-            >Hide Keybinding Guide
-            <input type="checkbox" id="hide-keybindings-setting"
-          /></label>
-          <p>
-            Hides Keybindings Display Guide.
-            <span>(No effect on performance, purely aesthetic.)</span>
-          </p>
         </div>
+        <label for="hide-controller-setting"
+          >Hide Keybinding Guide
+          <input type="checkbox" id="hide-keybindings-setting"
+        /></label>
+        <p>
+          Hides Keybindings Display Guide.
+          <span>(No effect on performance, purely aesthetic.)</span>
+        </p>
         <label for="hide-controller-setting"
           >Hide Controller UI
           <input type="checkbox" id="hide-controller-setting"

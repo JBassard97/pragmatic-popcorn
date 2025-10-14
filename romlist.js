@@ -33,6 +33,7 @@ const romlist = {
       { Tetris: `${BASE_URL}/roms/nes/Other/T.nes` },
       { "Duck Tales": `${BASE_URL}/roms/nes/Other/DT.nes` },
       { "Adventures of Lolo": `${BASE_URL}/roms/nes/Other/LL.nes` },
+      {"Adventures of Lolo 3": `${BASE_URL}/roms/nes/Other/LL3.nes`},
       { "Bubble Bobble": `${BASE_URL}/roms/nes/Other/BB.nes` },
       { BurgerTime: `${BASE_URL}/roms/nes/Other/BT.nes` },
       { "Kid Icarus": `${BASE_URL}/roms/nes/Other/KI.nes` },
