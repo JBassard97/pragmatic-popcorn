@@ -33,7 +33,7 @@ const romlist = {
       { Tetris: `${BASE_URL}/roms/nes/Other/T.nes` },
       { "Duck Tales": `${BASE_URL}/roms/nes/Other/DT.nes` },
       { "Adventures of Lolo": `${BASE_URL}/roms/nes/Other/LL.nes` },
-      {"Adventures of Lolo 3": `${BASE_URL}/roms/nes/Other/LL3.nes`},
+      { "Adventures of Lolo 3": `${BASE_URL}/roms/nes/Other/LL3.nes` },
       { "Bubble Bobble": `${BASE_URL}/roms/nes/Other/BB.nes` },
       { BurgerTime: `${BASE_URL}/roms/nes/Other/BT.nes` },
       { "Kid Icarus": `${BASE_URL}/roms/nes/Other/KI.nes` },
@@ -103,7 +103,12 @@ const romlist = {
     ],
   },
   DS: {
-    Pokemon: [{ "Pokemon Platinum": `./roms/ds/Pokemon/PP.nds` }],
+    Pokemon: [
+      { "Pokemon Platinum": `./roms/ds/Pokemon/PP.nds` },
+      {
+        "Pokemon Mystery Dungeon: Explorers of Sky": `./roms/ds/Pokemon/PMDEOS.nds`,
+      },
+    ],
     Mario: [
       { "Super Mario 64 DS": `./roms/ds/Mario/SM64DS.nds` },
       { "Mario & Luigi - Bowser's Inside Story": `./roms/ds/Mario/MLBIS.nds` },
